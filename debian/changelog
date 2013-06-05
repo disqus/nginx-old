@@ -1,3 +1,11 @@
+nginx (1.2.1-2.2+wheezy1) stable-security; urgency=high
+
+  * debian/patches/fix-CVE-2013-2070.patch:
+    + Fixed the buffer overflow issue found on may 13th 2013.
+      See: CVE-2013-2070 for more details.
+
+ -- Cyril Lavier <cyril.lavier@davromaniak.eu>  Wed, 05 Jun 2013 10:41:45 +0200
+
 nginx (1.2.1-2.2) unstable; urgency=low
 
   * Non-maintainer upload.
