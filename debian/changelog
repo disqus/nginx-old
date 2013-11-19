@@ -1,3 +1,11 @@
+nginx (1.2.1-2.2+wheezy2) wheezy-security; urgency=high
+
+  * debian/patches/fix-CVE-2013-4547.patch:
+    + Proper backtracking after space in a request line.
+      See: CVE:2013-4547 for more details. (Closes: #730012)
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Wed, 20 Nov 2013 00:36:19 +0200
+
 nginx (1.2.1-2.2+wheezy1) stable-security; urgency=high
 
   * debian/patches/fix-CVE-2013-2070.patch:
