@@ -309,8 +309,9 @@ typedef struct {
     ngx_int_t                         nfree;
 
 #if (NGX_HTTP_SSL)
-    ngx_uint_t                        ssl;    /* unsigned  ssl:1; */
+    unsigned                          ssl:1;
 #endif
+    unsigned                          proxy_protocol:1;
 } ngx_http_connection_t;
 
 
@@ -420,6 +421,7 @@ struct ngx_http_request_s {
 #endif
 
     size_t                            limit_rate;
+    size_t                            limit_rate_after;
 
     /* used to learn the Apache compatible response length without a header */
     size_t                            header_size;
@@ -584,6 +586,7 @@ extern ngx_http_header_out_t   ngx_http_headers_out[];
 #define ngx_http_set_connection_log(c, l)                                     \
                                                                               \
     c->log->file = l->file;                                                   \
+    c->log->next = l->next;                                                   \
     if (!(c->log->log_level & NGX_LOG_DEBUG_CONNECTION)) {                    \
         c->log->log_level = l->log_level;                                     \
     }
