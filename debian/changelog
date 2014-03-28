@@ -1,3 +1,9 @@
+nginx (1.5.12-1~exp1) experimental; urgency=medium
+
+  * Release 1.5.12-1~exp1 to experimental
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Fri, 28 Mar 2014 14:04:48 +0200
+
 nginx (1.4.7-1) unstable; urgency=medium
 
   [ Christos Trochalakis ]
