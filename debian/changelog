@@ -1,3 +1,9 @@
+nginx (1.6.1-1~bpo70+1) wheezy-backports; urgency=medium
+
+  * Rebuild for wheezy-backports.
+
+ -- Aron Xu <aron@debian.org>  Mon, 01 Sep 2014 07:46:46 +0800
+
 nginx (1.6.1-1) unstable; urgency=medium
 
   [ Christos Trochalakis ]
