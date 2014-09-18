@@ -1,3 +1,13 @@
+nginx (1.2.1-2.2+wheezy3) wheezy-security; urgency=high
+
+  * debian/patches/fix-CVE-2014-3616.patch:
+    CVE-2014-3616: It was possible to reuse cached SSL sessions in
+    unrelated contexts, allowing virtual host confusion attacks in some
+    configurations by an attacker in a privileged network position.
+    (Closes: #761940)
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Thu, 18 Sep 2014 15:25:04 +0300
+
 nginx (1.2.1-2.2+wheezy2) stable-security; urgency=high
 
   * debian/patches/fix-CVE-2013-4547.patch:
