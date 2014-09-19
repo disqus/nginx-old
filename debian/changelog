@@ -1,3 +1,9 @@
+nginx (1.6.2-1~bpo70+1) wheezy-backports; urgency=medium
+
+  * Rebuild for wheezy-backports.
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Fri, 19 Sep 2014 14:39:48 +0300
+
 nginx (1.6.2-1) unstable; urgency=high
 
   [ Christos Trochalakis ]
