@@ -1,11 +1,11 @@
-nginx (1.6.2-5+deb8u1) UNRELEASED; urgency=medium
+nginx (1.6.2-5+deb8u1) jessie-security; urgency=high
 
   [ Christos Trochalakis ]
   * Fixes multiple resolver CVEs,
     CVE-2016-0742, CVE-2016-0746, CVE-2016-0747
     Closes: #812806
 
- -- Christos Trochalakis <yatiohi@ideopolis.gr>  Wed, 27 Jan 2016 12:19:54 +0200
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Wed, 27 Jan 2016 12:22:00 +0200
 
 nginx (1.6.2-5) unstable; urgency=medium
 
