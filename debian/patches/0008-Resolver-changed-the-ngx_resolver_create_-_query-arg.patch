@@ -1,0 +1,134 @@
+From: Roman Arutyunyan <arut@nginx.com>
+Date: Tue, 26 Jan 2016 16:46:48 +0300
+Subject: Resolver: changed the ngx_resolver_create_*_query() arguments.
+
+No functional changes.
+
+This is needed by the following change.
+---
+ src/core/ngx_resolver.c | 36 +++++++++++++++++++-----------------
+ 1 file changed, 19 insertions(+), 17 deletions(-)
+
+diff --git a/src/core/ngx_resolver.c b/src/core/ngx_resolver.c
+index 15d42b7..6c83324 100644
+--- a/src/core/ngx_resolver.c
++++ b/src/core/ngx_resolver.c
+@@ -59,10 +59,10 @@ static void ngx_resolver_expire(ngx_resolver_t *r, ngx_rbtree_t *tree,
+     ngx_queue_t *queue);
+ static ngx_int_t ngx_resolver_send_query(ngx_resolver_t *r,
+     ngx_resolver_node_t *rn);
+-static ngx_int_t ngx_resolver_create_name_query(ngx_resolver_node_t *rn,
+-    ngx_resolver_ctx_t *ctx);
+-static ngx_int_t ngx_resolver_create_addr_query(ngx_resolver_node_t *rn,
+-    ngx_resolver_ctx_t *ctx);
++static ngx_int_t ngx_resolver_create_name_query(ngx_resolver_t *r,
++    ngx_resolver_node_t *rn, ngx_str_t *name);
++static ngx_int_t ngx_resolver_create_addr_query(ngx_resolver_t *r,
++    ngx_resolver_node_t *rn, in_addr_t addr);
+ static void ngx_resolver_resend_handler(ngx_event_t *ev);
+ static time_t ngx_resolver_resend(ngx_resolver_t *r, ngx_rbtree_t *tree,
+     ngx_queue_t *queue);
+@@ -565,7 +565,7 @@ ngx_resolve_name_locked(ngx_resolver_t *r, ngx_resolver_ctx_t *ctx)
+         ngx_rbtree_insert(&r->name_rbtree, &rn->node);
+     }
+ 
+-    rc = ngx_resolver_create_name_query(rn, ctx);
++    rc = ngx_resolver_create_name_query(r, rn, &ctx->name);
+ 
+     if (rc == NGX_ERROR) {
+         goto failed;
+@@ -727,7 +727,7 @@ ngx_resolve_addr(ngx_resolver_ctx_t *ctx)
+         ngx_rbtree_insert(&r->addr_rbtree, &rn->node);
+     }
+ 
+-    if (ngx_resolver_create_addr_query(rn, ctx) != NGX_OK) {
++    if (ngx_resolver_create_addr_query(r, rn, ctx->addr) != NGX_OK) {
+         goto failed;
+     }
+ 
+@@ -1822,7 +1822,8 @@ ngx_resolver_rbtree_insert_value(ngx_rbtree_node_t *temp,
+ 
+ 
+ static ngx_int_t
+-ngx_resolver_create_name_query(ngx_resolver_node_t *rn, ngx_resolver_ctx_t *ctx)
++ngx_resolver_create_name_query(ngx_resolver_t *r, ngx_resolver_node_t *rn,
++    ngx_str_t *name)
+ {
+     u_char                *p, *s;
+     size_t                 len, nlen;
+@@ -1830,11 +1831,11 @@ ngx_resolver_create_name_query(ngx_resolver_node_t *rn, ngx_resolver_ctx_t *ctx)
+     ngx_resolver_qs_t     *qs;
+     ngx_resolver_query_t  *query;
+ 
+-    nlen = ctx->name.len ? (1 + ctx->name.len + 1) : 1;
++    nlen = name->len ? (1 + name->len + 1) : 1;
+ 
+     len = sizeof(ngx_resolver_query_t) + nlen + sizeof(ngx_resolver_qs_t);
+ 
+-    p = ngx_resolver_alloc(ctx->resolver, len);
++    p = ngx_resolver_alloc(r, len);
+     if (p == NULL) {
+         return NGX_ERROR;
+     }
+@@ -1846,8 +1847,8 @@ ngx_resolver_create_name_query(ngx_resolver_node_t *rn, ngx_resolver_ctx_t *ctx)
+ 
+     ident = ngx_random();
+ 
+-    ngx_log_debug2(NGX_LOG_DEBUG_CORE, ctx->resolver->log, 0,
+-                   "resolve: \"%V\" %i", &ctx->name, ident & 0xffff);
++    ngx_log_debug2(NGX_LOG_DEBUG_CORE, r->log, 0,
++                   "resolve: \"%V\" %i", name, ident & 0xffff);
+ 
+     query->ident_hi = (u_char) ((ident >> 8) & 0xff);
+     query->ident_lo = (u_char) (ident & 0xff);
+@@ -1866,7 +1867,7 @@ ngx_resolver_create_name_query(ngx_resolver_node_t *rn, ngx_resolver_ctx_t *ctx)
+     qs = (ngx_resolver_qs_t *) p;
+ 
+     /* query type */
+-    qs->type_hi = 0; qs->type_lo = (u_char) ctx->type;
++    qs->type_hi = 0; qs->type_lo = NGX_RESOLVE_A;
+ 
+     /* IP query class */
+     qs->class_hi = 0; qs->class_lo = 1;
+@@ -1877,11 +1878,11 @@ ngx_resolver_create_name_query(ngx_resolver_node_t *rn, ngx_resolver_ctx_t *ctx)
+     p--;
+     *p-- = '\0';
+ 
+-    if (ctx->name.len == 0)  {
++    if (name->len == 0)  {
+         return NGX_DECLINED;
+     }
+ 
+-    for (s = ctx->name.data + ctx->name.len - 1; s >= ctx->name.data; s--) {
++    for (s = name->data + name->len - 1; s >= name->data; s--) {
+         if (*s != '.') {
+             *p = *s;
+             len++;
+@@ -1911,7 +1912,8 @@ ngx_resolver_create_name_query(ngx_resolver_node_t *rn, ngx_resolver_ctx_t *ctx)
+ /* AF_INET only */
+ 
+ static ngx_int_t
+-ngx_resolver_create_addr_query(ngx_resolver_node_t *rn, ngx_resolver_ctx_t *ctx)
++ngx_resolver_create_addr_query(ngx_resolver_t *r, ngx_resolver_node_t *rn,
++    in_addr_t addr)
+ {
+     u_char                *p, *d;
+     size_t                 len;
+@@ -1923,7 +1925,7 @@ ngx_resolver_create_addr_query(ngx_resolver_node_t *rn, ngx_resolver_ctx_t *ctx)
+           + sizeof(".255.255.255.255.in-addr.arpa.") - 1
+           + sizeof(ngx_resolver_qs_t);
+ 
+-    p = ngx_resolver_alloc(ctx->resolver, len);
++    p = ngx_resolver_alloc(r, len);
+     if (p == NULL) {
+         return NGX_ERROR;
+     }
+@@ -1948,7 +1950,7 @@ ngx_resolver_create_addr_query(ngx_resolver_node_t *rn, ngx_resolver_ctx_t *ctx)
+     p += sizeof(ngx_resolver_query_t);
+ 
+     for (n = 0; n < 32; n += 8) {
+-        d = ngx_sprintf(&p[1], "%ud", (ctx->addr >> n) & 0xff);
++        d = ngx_sprintf(&p[1], "%ud", (addr >> n) & 0xff);
+         *p = (u_char) (d - &p[1]);
+         p = d;
+     }

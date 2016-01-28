@@ -1,0 +1,78 @@
+From: Ruslan Ermilov <ru@nginx.com>
+Date: Tue, 26 Jan 2016 16:46:38 +0300
+Subject: Resolver: fixed CNAME processing for several requests.
+
+When several requests were waiting for a response, then after getting
+a CNAME response only the last request was properly processed, while
+others were left waiting.
+---
+ src/core/ngx_resolver.c | 21 +++++++++++++++------
+ 1 file changed, 15 insertions(+), 6 deletions(-)
+
+diff --git a/src/core/ngx_resolver.c b/src/core/ngx_resolver.c
+index 8d40043..15d42b7 100644
+--- a/src/core/ngx_resolver.c
++++ b/src/core/ngx_resolver.c
+@@ -411,7 +411,7 @@ ngx_resolve_name_locked(ngx_resolver_t *r, ngx_resolver_ctx_t *ctx)
+     in_addr_t             addr, *addrs;
+     ngx_int_t             rc;
+     ngx_uint_t            naddrs;
+-    ngx_resolver_ctx_t   *next;
++    ngx_resolver_ctx_t   *next, *last;
+     ngx_resolver_node_t  *rn;
+ 
+     hash = ngx_crc32_short(ctx->name.data, ctx->name.len);
+@@ -420,6 +420,9 @@ ngx_resolve_name_locked(ngx_resolver_t *r, ngx_resolver_ctx_t *ctx)
+ 
+     if (rn) {
+ 
++        /* ctx can be a list after NGX_RESOLVE_CNAME */
++        for (last = ctx; last->next; last = last->next);
++
+         if (rn->valid >= ngx_time()) {
+ 
+             ngx_log_debug0(NGX_LOG_DEBUG_CORE, r->log, 0, "resolve cached");
+@@ -449,7 +452,7 @@ ngx_resolve_name_locked(ngx_resolver_t *r, ngx_resolver_ctx_t *ctx)
+                     addrs = NULL;
+                 }
+ 
+-                ctx->next = rn->waiting;
++                last->next = rn->waiting;
+                 rn->waiting = NULL;
+ 
+                 /* unlock name mutex */
+@@ -483,7 +486,7 @@ ngx_resolve_name_locked(ngx_resolver_t *r, ngx_resolver_ctx_t *ctx)
+                 return ngx_resolve_name_locked(r, ctx);
+             }
+ 
+-            ctx->next = rn->waiting;
++            last->next = rn->waiting;
+             rn->waiting = NULL;
+ 
+             /* unlock name mutex */
+@@ -516,7 +519,7 @@ ngx_resolve_name_locked(ngx_resolver_t *r, ngx_resolver_ctx_t *ctx)
+                 ngx_add_timer(ctx->event, ctx->timeout);
+             }
+ 
+-            ctx->next = rn->waiting;
++            last->next = rn->waiting;
+             rn->waiting = ctx;
+             ctx->state = NGX_AGAIN;
+ 
+@@ -575,8 +578,14 @@ ngx_resolve_name_locked(ngx_resolver_t *r, ngx_resolver_ctx_t *ctx)
+         ngx_resolver_free(r, rn->name);
+         ngx_resolver_free(r, rn);
+ 
+-        ctx->state = NGX_RESOLVE_NXDOMAIN;
+-        ctx->handler(ctx);
++        do {
++            ctx->state = NGX_RESOLVE_NXDOMAIN;
++            next = ctx->next;
++
++            ctx->handler(ctx);
++
++            ctx = next;
++        } while (ctx);
+ 
+         return NGX_OK;
+     }

@@ -2,3 +2,9 @@ perl-use-dpkg-buildflags.patch
 fix-CVE-2013-2070.patch
 fix-CVE-2013-4547.patch
 fix-CVE-2014-3616.patch
+0005-Resolver-fixed-possible-segmentation-fault-on-DNS-fo.patch
+0006-Resolver-fixed-crashes-in-timeout-handler.patch
+0007-Resolver-fixed-CNAME-processing-for-several-requests.patch
+0008-Resolver-changed-the-ngx_resolver_create_-_query-arg.patch
+0009-Resolver-fixed-use-after-free-memory-accesses-with-C.patch
+0010-Resolver-limited-CNAME-recursion.patch
