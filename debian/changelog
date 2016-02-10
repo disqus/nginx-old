@@ -1,3 +1,9 @@
+nginx (1.9.10-1~bpo8+1) jessie-backports; urgency=medium
+
+  * Rebuild for jessie-backports.
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Wed, 10 Feb 2016 13:15:31 +0200
+
 nginx (1.9.10-1) unstable; urgency=medium
 
   [ Christos Trochalakis ]
