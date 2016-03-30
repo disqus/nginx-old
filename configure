@@ -58,6 +58,10 @@ if [ "$NGX_PLATFORM" != win32 ]; then
     . auto/unix
 fi
 
+# Debian
+# Make sure signature stays the same on all nginx flavors
+have=NGX_HTTP_HEADERS . auto/have
+
 . auto/threads
 . auto/modules
 . auto/lib/conf
