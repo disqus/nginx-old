@@ -1,3 +1,13 @@
+nginx (1.9.10-1~bpo8+2) jessie-backports; urgency=medium
+
+  [ Christos Trochalakis ]
+  * debian/patches:
+    Backports upstream patch fixing CVE-2016-4450
+    NULL pointer dereference while writing client request body.
+    (Closes: #825960)
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Wed, 01 Jun 2016 14:36:46 +0300
+
 nginx (1.9.10-1~bpo8+1) jessie-backports; urgency=medium
 
   * Rebuild for jessie-backports.
