@@ -1,3 +1,12 @@
+nginx (1.6.2-5+deb8u2) jessie-security; urgency=high
+
+  [ Christos Trochalakis ]
+  * Fixes CVE-2016-4450
+    NULL pointer dereference while writing client request body.
+    (Closes: #825960)
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Tue, 31 May 2016 22:55:34 +0300
+
 nginx (1.6.2-5+deb8u1) jessie-security; urgency=high
 
   [ Christos Trochalakis ]
