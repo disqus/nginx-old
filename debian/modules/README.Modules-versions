@@ -26,7 +26,7 @@ README for Modules versions
 
  nginx-upstream-fair
   Homepage: https://github.com/gnosek/nginx-upstream-fair
-  Version: a18b409
+  Version: a18b409+pull/22
 
  nginx-push
   Homepage: https://github.com/slact/nginx_http_push_module
