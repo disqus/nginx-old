@@ -1,3 +1,10 @@
+nginx (1.11.3-1~exp2) experimental; urgency=medium
+
+  * Build against OpenSSL 1.1.0. (Closes: #828453)
+    Thanks Kurt Roeckx for the pointers.
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Wed, 07 Sep 2016 14:38:59 +0300
+
 nginx (1.11.3-1~exp1) unstable; urgency=medium
 
   [ Christos Trochalakis ]
