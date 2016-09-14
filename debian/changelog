@@ -1,3 +1,17 @@
+nginx (1.9.10-1~bpo8+4) jessie-backports; urgency=high
+
+  [ Christos Trochalakis ]
+  * debian/nginx-common.postinst:
+    + CVE-2016-1247: Secure log file handling (owner & permissions)
+      against privilege escalation attacks. /var/log/nginx is now owned
+      by root:adm. Thanks ro Dawid Golunski for the report.
+      Changing /var/log/nginx permissions effectively reopens #701112,
+      since log files can be world-readable. This is a trade-off until
+      a better log opening solution is implemented upstream (trac:376).
+      (Closes: #842295)
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Thu, 20 Oct 2016 09:49:25 +0300
+
 nginx (1.9.10-1~bpo8+3) jessie-backports; urgency=medium
 
   [ Christos Trochalakis ]
