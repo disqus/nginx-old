@@ -38,8 +38,8 @@ Description: small, powerful, scalable web/proxy server
  created by Igor Sysoev. It can be used both as a standalone web server
  and as a proxy to reduce the load on back-end HTTP or mail servers.
  .
- This is a dependency package to install either nginx-full (by default),
- nginx-light or nginx-extras.
+ This is a dependency package to install either nginx-full (by default) or
+ nginx-light.
 
 Package: nginx-doc
 Architecture: all
@@ -56,7 +56,7 @@ Description: small, powerful, scalable web/proxy server - documentation
 Package: nginx-common
 Architecture: all
 Multi-Arch: foreign
-Depends: lsb-base (>= 3.0-6), ${misc:Depends}
+Depends: lsb-base, ${misc:Depends}
 Suggests: fcgiwrap, nginx-doc, ssl-cert
 Description: small, powerful, scalable web/proxy server - common files
  Nginx ("engine X") is a high-performance web and reverse proxy server
