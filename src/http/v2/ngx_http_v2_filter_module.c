@@ -169,12 +169,6 @@ ngx_http_v2_header_filter(ngx_http_request_t *r)
         return NGX_OK;
     }
 
-    fc = r->connection;
-
-    if (fc->error) {
-        return NGX_ERROR;
-    }
-
     if (r->method == NGX_HTTP_HEAD) {
         r->header_only = 1;
     }
@@ -264,6 +258,8 @@ ngx_http_v2_header_filter(ngx_http_request_t *r)
     {
         len += 1 + ngx_http_v2_literal_size("Wed, 31 Dec 1986 18:00:00 GMT");
     }
+
+    fc = r->connection;
 
     if (r->headers_out.location && r->headers_out.location->value.len) {
 
@@ -1317,20 +1313,18 @@ static ngx_inline void
 ngx_http_v2_handle_stream(ngx_http_v2_connection_t *h2c,
     ngx_http_v2_stream_t *stream)
 {
-    ngx_connection_t  *fc;
+    ngx_event_t  *wev;
 
-    if (stream->handled || stream->blocked) {
+    if (stream->handled || stream->blocked || stream->exhausted) {
         return;
     }
 
-    fc = stream->request->connection;
+    wev = stream->request->connection->write;
 
-    if (!fc->error && (stream->exhausted || fc->write->delayed)) {
-        return;
+    if (!wev->delayed) {
+        stream->handled = 1;
+        ngx_queue_insert_tail(&h2c->posted, &stream->queue);
     }
-
-    stream->handled = 1;
-    ngx_queue_insert_tail(&h2c->posted, &stream->queue);
 }
 
 
