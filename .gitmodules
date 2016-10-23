@@ -1,0 +1,9 @@
+[submodule "debian/modules/nginx-statsd"]
+	path = debian/modules/nginx-statsd
+	url = git://github.com/zebrafishlabs/nginx-statsd.git
+[submodule "debian/modules/ngx_brotli"]
+	path = debian/modules/ngx_brotli
+	url = git://github.com/google/ngx_brotli.git
+[submodule "debian/modules/ngx_pagespeed"]
+	path = debian/modules/ngx_pagespeed
+	url = git://github.com/pagespeed/ngx_pagespeed.git
