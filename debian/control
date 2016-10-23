@@ -22,7 +22,8 @@ Build-Depends: autotools-dev,
                libssl-dev,
                libxslt1-dev,
                po-debconf,
-               zlib1g-dev
+               zlib1g-dev,
+               brotli
 Standards-Version: 3.9.8.0
 Homepage: http://nginx.net
 Vcs-Git: https://anonscm.debian.org/cgit/collab-maint/nginx.git
