@@ -107,6 +107,18 @@ Files: debian/modules/ngx_http_substitutions_filter_module/*
 Copyright: Copyright (C) 2014 by Weibin Yao <yaoweibin@gmail.com>
 License: BSD-2-clause
 
+Files: debian/modules/nginx-statsd/*
+Copyright: Copyright (c) Adrian Perez <aperez@igalia.com>
+License: BSD-2-clause
+
+Files: debian/modules/ngx_brotli/*
+Copyright: Copyright (c) Adrian Perez <aperez@igalia.com>
+License: BSD-2-clause
+
+Files: debian/modules/ngx_pagespeed/*
+Copyright: Copyright (c) Adrian Perez <aperez@igalia.com>
+License: BSD-2-clause
+
 License: BSD-2-clause
  All rights reserved.
  .
