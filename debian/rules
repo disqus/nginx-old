@@ -75,7 +75,12 @@ common_configure_flags := \
 			--with-http_v2_module \
 			--with-http_dav_module \
 			--with-http_slice_module \
-			--with-threads
+			--with-threads \
+			--with-md5-asm \
+			--with-md5=/usr/include \
+			--with-sha1-asm \
+			--with-sha1=/usr/include \
+			--with-file-aio
 
 light_configure_flags := \
 			$(common_configure_flags) \
