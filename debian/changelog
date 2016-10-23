@@ -1,3 +1,22 @@
+nginx (1.10.1-4~disqus0) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @1a91bf3df93a90d457de9e45dd232891679f051c **
+
+  * Add statsd, brotli, pagespeed modules
+  * Build mods
+  * Build flags from disqus/docker-nginx
+  * HACK TEMP Add copyrights with bad author
+  * Req brotli
+  * libbrotli
+  * Remove pagespeed
+  * module conf
+  * New pkgs for mods
+  * Module pkging
+  * Bite me
+  * Yay
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Sun, 23 Oct 2016 18:32:34 -0700
+
 nginx (1.10.1-3+yakkety0) yakkety; urgency=medium
 
   * Resynchronize PPA with Debian PPA (supersedes all previous changelog
