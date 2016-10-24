@@ -25,7 +25,8 @@ Build-Depends: autotools-dev,
                zlib1g-dev,
                libbrotli-dev,
                libatomic-ops-dev,
-               libgoogle-perftools-dev
+               libgoogle-perftools-dev,
+               libxml2-dev
 Standards-Version: 3.9.8.0
 Homepage: http://nginx.net
 Vcs-Git: https://anonscm.debian.org/cgit/collab-maint/nginx.git
