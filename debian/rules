@@ -28,13 +28,10 @@ DYN_MODS := \
 	http-xslt-filter \
 	mail \
 	nchan \
-	stream \
 	http-statsd \
 	http-brotli-static \
 	http-brotli-filter \
-	http-push-stream \
-	stream-upsync \
-	http-upsync
+	http-push-stream
 
 MODULESDIR = $(CURDIR)/debian/modules
 BASEDIR = $(CURDIR)
