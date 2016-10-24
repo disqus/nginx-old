@@ -371,3 +371,22 @@ Description: Substitution filter module for Nginx
  substitutions on response bodies. The module is quite different from Nginx's
  native Substitution module. It scans the output chains buffer and
  matches string line by line, just like Apache's mod_substitute.
+
+Package: libnginx-mod-http-statsd
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Statsd module for Nginx
+ Sends metrics on requests to statsd
+
+Package: libnginx-mod-http-brotli-filter
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, libbrotli1
+Description: Brotli compression filter module for Nginx
+ Google's brotli filter support for Nginx
+
+Package: libnginx-mod-http-brotli-static
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, libbrotli1
+Description: Brotli compression static module for Nginx
+ Google's brotli static support for Nginx
+
