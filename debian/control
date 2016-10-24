@@ -24,7 +24,8 @@ Build-Depends: autotools-dev,
                po-debconf,
                zlib1g-dev,
                libbrotli-dev,
-               libatomic-ops-dev
+               libatomic-ops-dev,
+               libgoogle-perftools-dev
 Standards-Version: 3.9.8.0
 Homepage: http://nginx.net
 Vcs-Git: https://anonscm.debian.org/cgit/collab-maint/nginx.git
@@ -377,13 +378,13 @@ Description: Substitution filter module for Nginx
 
 Package: libnginx-mod-http-brotli-filter
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, libbrotli1
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Brotli compression filter module for Nginx
  Google's brotli filter support for Nginx
 
 Package: libnginx-mod-http-brotli-static
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, libbrotli1
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Brotli compression static module for Nginx
  Google's brotli static support for Nginx
 
