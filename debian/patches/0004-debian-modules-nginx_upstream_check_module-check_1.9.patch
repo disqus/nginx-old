@@ -1,6 +1,6 @@
 From: "Trevor Joynson (trevorj)" <github@skywww.net>
-Date: Sun, 23 Oct 2016 19:51:05 -0700
-Subject: nginx_upstream_check_module/check_1.9.2+.patch
+Date: Sun, 23 Oct 2016 21:38:37 -0700
+Subject: debian/modules/nginx_upstream_check_module/check_1.9.2+.patch
 
 ---
  src/http/modules/ngx_http_upstream_hash_module.c   | 21 +++++++++++
