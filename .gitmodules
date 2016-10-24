@@ -16,3 +16,6 @@
 [submodule "debian/modules/nginx-push-stream-module"]
 	path = debian/modules/nginx-push-stream-module
 	url = git://github.com/wandenberg/nginx-push-stream-module.git
+[submodule "debian/modules/nginx_upstream_check_module"]
+	path = debian/modules/nginx_upstream_check_module
+	url = git://github.com/yaoweibin/nginx_upstream_check_module.git
