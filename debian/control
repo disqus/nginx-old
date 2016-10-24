@@ -79,6 +79,7 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-http-upstream-fair (= ${binary:Version}),
          libnginx-mod-http-xslt-filter (= ${binary:Version}),
          libnginx-mod-mail (= ${binary:Version}),
+         libnginx-mod-stream (= ${binary:Version}),
          nginx-common (= ${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
@@ -155,8 +156,13 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-http-xslt-filter (= ${binary:Version}),
          libnginx-mod-http-brotli-filter (= ${binary:Version}),
          libnginx-mod-http-brotli-static (= ${binary:Version}),
+         libnginx-mod-http-push-stream (= ${binary:Version}),
+         libnginx-mod-http-upstream-check (= ${binary:Version}),
+         libnginx-mod-http-upsync (= ${binary:Version}),
          libnginx-mod-mail (= ${binary:Version}),
          libnginx-mod-nchan (= ${binary:Version}),
+         libnginx-mod-stream (= ${binary:Version}),
+         libnginx-mod-stream-upsync (= ${binary:Version}),
          nginx-common (= ${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
@@ -226,6 +232,16 @@ Description: Mail module for Nginx
  .
  The module supports proxying all the standard mail protocols such as IMAP,
  POP3 & SMTP.
+
+Package: libnginx-mod-stream
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Stream module for Nginx
+ The nginx_stream module adds stream proxy support to nginx.
+ .
+ Stream module supports loadbalancing & proxying to TCP servers. The module
+ also supports ACLs/connection limiting and configuring multiple operational
+ parameters.
 
 Package: libnginx-mod-http-perl
 Architecture: any
@@ -372,7 +388,32 @@ Description: Brotli compression filter module for Nginx
 
 Package: libnginx-mod-http-brotli-static
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, libbrotli1
 Description: Brotli compression static module for Nginx
  Google's brotli static support for Nginx
+
+Package: libnginx-mod-http-upsync
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Consul/etcd dynamic reconfiguration without reloading for Nginx (HTTP)
+ Consul/etcd dynamic reconfiguration without reloading for Nginx (HTTP)
+
+Package: libnginx-mod-stream-upsync
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends},
+         libnginx-mod-stream (= ${binary:Version})
+Description: Consul/etcd dynamic reconfiguration without reloading for Nginx (Stream)
+ Consul/etcd dynamic reconfiguration without reloading for Nginx (Stream)
+
+Package: libnginx-mod-http-push-stream
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Highly scalable HTTP push via WS/COMET/SSE for Nginx
+ Highly scalable HTTP push via WS/COMET/SSE for Nginx
+
+Package: libnginx-mod-http-upstream-check
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Upstream check module for Nginx
+ Upstream check module for Nginx
 
