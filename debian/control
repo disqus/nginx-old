@@ -155,7 +155,6 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-http-xslt-filter (= ${binary:Version}),
          libnginx-mod-http-brotli-filter (= ${binary:Version}),
          libnginx-mod-http-brotli-static (= ${binary:Version}),
-         libnginx-mod-http-statsd (= ${binary:Version}),
          libnginx-mod-mail (= ${binary:Version}),
          libnginx-mod-nchan (= ${binary:Version}),
          libnginx-mod-stream (= ${binary:Version}),
@@ -375,12 +374,6 @@ Description: Substitution filter module for Nginx
  substitutions on response bodies. The module is quite different from Nginx's
  native Substitution module. It scans the output chains buffer and
  matches string line by line, just like Apache's mod_substitute.
-
-Package: libnginx-mod-http-statsd
-Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Statsd module for Nginx
- Sends metrics on requests to statsd
 
 Package: libnginx-mod-http-brotli-filter
 Architecture: any

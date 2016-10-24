@@ -74,11 +74,12 @@ common_configure_flags := \
 			--with-http_dav_module \
 			--with-http_slice_module \
 			--with-threads \
+			--with-file-aio \
+			--with-libatomic \
 			--with-md5-asm \
 			--with-md5=/usr/include \
 			--with-sha1-asm \
-			--with-sha1=/usr/include \
-			--with-file-aio
+			--with-sha1=/usr/include
 
 light_configure_flags := \
 			$(common_configure_flags) \
@@ -114,7 +115,9 @@ full_configure_flags := \
 
 extras_configure_flags := \
 			$(common_configure_flags) \
+			--with-google_perftools_module \
 			--with-http_addition_module \
+			--with-http_degradation_module \
 			--with-http_flv_module \
 			--with-http_geoip_module=dynamic \
 			--with-http_gunzip_module \
@@ -130,7 +133,6 @@ extras_configure_flags := \
 			--with-mail_ssl_module \
 			--with-stream=dynamic \
 			--with-stream_ssl_module \
-			--with-libatomic \
 			--add-dynamic-module=$(MODULESDIR)/headers-more-nginx-module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-auth-pam \
 			--add-dynamic-module=$(MODULESDIR)/nginx-cache-purge \
@@ -143,7 +145,7 @@ extras_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upload-progress \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upstream-fair \
 			--add-dynamic-module=$(MODULESDIR)/ngx_http_substitutions_filter_module \
-			--add-dynamic-module=$(MODULESDIR)/nginx-statsd \
+			--add-module=$(MODULESDIR)/nginx-statsd \
 			--add-dynamic-module=$(MODULESDIR)/ngx_brotli
 
 %:
