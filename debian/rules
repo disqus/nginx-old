@@ -31,9 +31,7 @@ DYN_MODS := \
 	stream \
 	http-statsd \
 	http-brotli-static \
-	http-brotli-filter \
-	pagespeed \
-	pagespeed-etag-filter
+	http-brotli-filter
 
 MODULESDIR = $(CURDIR)/debian/modules
 BASEDIR = $(CURDIR)
@@ -145,8 +143,7 @@ extras_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upstream-fair \
 			--add-dynamic-module=$(MODULESDIR)/ngx_http_substitutions_filter_module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-statsd \
-			--add-dynamic-module=$(MODULESDIR)/ngx_brotli \
-			--add-dynamic-module=$(MODULESDIR)/ngx_pagespeed
+			--add-dynamic-module=$(MODULESDIR)/ngx_brotli
 
 %:
 	dh $@ --with systemd
