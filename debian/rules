@@ -33,8 +33,8 @@ DYN_MODS := \
 	http-brotli-static \
 	http-brotli-filter \
 	http-push-stream \
-	http-upsync
-	#stream-upsync
+	stream-upsync
+	#http-upsync
 
 MODULESDIR = $(CURDIR)/debian/modules
 BASEDIR = $(CURDIR)
@@ -151,8 +151,8 @@ extras_configure_flags := \
 			--add-module=$(MODULESDIR)/nginx-statsd \
 			--add-dynamic-module=$(MODULESDIR)/ngx_brotli \
 			--add-dynamic-module=$(MODULESDIR)/nginx-push-stream-module \
-			--add-dynamic-module=$(MODULESDIR)/nginx-upsync-module
-			#--add-dynamic-module=$(MODULESDIR)/nginx-stream-upsync-module \
+			--add-dynamic-module=$(MODULESDIR)/nginx-stream-upsync-module
+			#--add-dynamic-module=$(MODULESDIR)/nginx-upsync-module
 
 
 %:
