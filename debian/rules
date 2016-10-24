@@ -152,8 +152,8 @@ extras_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/ngx_brotli \
 			--add-dynamic-module=$(MODULESDIR)/nginx-push-stream-module \
 			--add-dynamic-module=$(MODULESDIR)/nginx_upstream_check_module \
-			--add-dynamic-module=$(MODULESDIR)/nginx-upsync-module
-			#--add-module=$(MODULESDIR)/nginx-stream-upsync-module
+			--add-dynamic-module=$(MODULESDIR)/nginx-upsync-module \
+			--add-dynamic-module=$(MODULESDIR)/nginx-stream-upsync-module
 
 
 %:
