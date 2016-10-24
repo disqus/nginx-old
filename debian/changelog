@@ -1,4 +1,6 @@
-nginx (1.10.1-4~disqus0) UNRELEASED; urgency=medium
+nginx (1.10.1-3~disqus1+yakkety0) yakkety; urgency=medium
+
+  [ Trevor Joynson (Debian) ]
 
   ** SNAPSHOT build @1a91bf3df93a90d457de9e45dd232891679f051c **
 
@@ -15,7 +17,15 @@ nginx (1.10.1-4~disqus0) UNRELEASED; urgency=medium
   * Bite me
   * Yay
 
- -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Sun, 23 Oct 2016 18:32:34 -0700
+  [ Thomas Ward ]
+  * Imported Debian patch 1.10.1-3+yakkety0
+
+  [ Trevor Joynson (trevorj) ]
+  * Add extra modules.
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Mon, 24 Oct 2016 01:16:16 -0700
 
 nginx (1.10.1-3+yakkety0) yakkety; urgency=medium
 
