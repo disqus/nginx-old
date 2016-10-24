@@ -28,7 +28,6 @@ DYN_MODS := \
 	http-xslt-filter \
 	mail \
 	nchan \
-	http-statsd \
 	http-brotli-static \
 	http-brotli-filter \
 	http-push-stream
@@ -149,8 +148,8 @@ extras_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/ngx_brotli \
 			--add-dynamic-module=$(MODULESDIR)/nginx-push-stream-module \
 			--add-module=$(MODULESDIR)/nginx_upstream_check_module \
-			--add-module=$(MODULESDIR)/nginx-stream-upsync-module \
 			--add-module=$(MODULESDIR)/nginx-upsync-module
+			#--add-module=$(MODULESDIR)/nginx-stream-upsync-module
 
 
 %:
