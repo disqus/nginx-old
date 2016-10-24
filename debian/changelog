@@ -1,3 +1,650 @@
+nginx (1.10.1-3ubuntu1ppa1) UNRELEASED; urgency=medium
+
+  [ Cyril Lavier ]
+  * Imported Debian patch 1.2.0-1
+  * Changed from unstable to UNRELEASED
+
+  [ Kartik Mistry ]
+  * wrap-and-sort debian/control
+
+  [ Cyril Lavier ]
+  * Updated the Vcs-* fields
+
+  [ Kartik Mistry ]
+  * Added missing copyrights from modules/, minor formatting etc
+  * Added missing bug number for new upstream release
+  * Fixed typo in template
+
+  [ Cyril Lavier ]
+  * Applied Justin's patch to the control file
+  * Applied Justin's patch to nginx-naxsi-ui.templates
+  * Fixed duplicate field Description at line 118
+  * Updated the pot/po files according to the new templates
+
+  [ Kartik Mistry ]
+  * Fixed duplicate Description
+
+  [ Cyril Lavier ]
+  * Added manpages for nginx-naxsi-ui
+  * Added the manpages list for nginx-naxsi-ui
+  * Modified it to remove the wildcard.
+  * Updated the changelog file
+
+  [ Kartik Mistry ]
+  * Fixed naxsi-ui-extract manpage for formatting etc
+
+  [ Cyril Lavier ]
+  * Formated naxsi-ui-intercept.1 base on the reformat did by Kartik on naxsi-ui-extract
+  * Changed Thibault Koechlin's email address
+
+  [ Kartik Mistry ]
+  * More minor formatting of manpages
+  * Added patch to add ULIMIT for restarts
+  * Added patch to fix deprecated listen directive
+  * Better changelog entries
+  * Set dist to unstable for upload
+  * Updated manpage, added Czech translation for Debconf
+
+  [ Cyril Lavier ]
+  * Added status module to nginx-naxsi
+  * Changelog entry for previous commit
+  * Update the nginx-naxsi module list
+  * Adding postrm and prerm scripts to nginx-naxsi-ui to correct the piupart error. For the moment, they are not removing the /etc/dbconfig-common/nginx-naxsi-ui.conf file. Don't hesitate to correct it :)
+  * Added Russian and German PO files
+
+  [ Kartik Mistry ]
+  * Added Danish translation of debconf template
+  * Removed duplicate copyright field
+
+  [ Cyril Lavier ]
+  * corrected the lintian warning about this script
+
+  [ Kartik Mistry ]
+  * Added Portuguese translation of PO debconf template
+  * Updated nginx-lua to upstream tag v0.5.0rc29, fixed for worker process crashes
+  * Added missing files from nginx-lua module. Oops..
+  * Added Swedish debconf po translation
+  * Updated to reviewed debconf template. Updated pt.po, ru.po, sv.po
+  * Added nl, sk po debconf translations
+  * New upstream version, (really) Added nl.po, sk.po
+
+  [ Cyril Lavier ]
+  * Add gbp.conf
+  * Revert "Add gbp.conf"
+  * Add SSL in nginx-full module list. Fixing #677128
+  * Changelog entry for the nginx-naxsi-ui postrm and prerm scripts
+
+  [ Kartik Mistry ]
+  * Updated de.po, da.po
+  * Run debconf-updatepo, fixed all translation files for fuzzy. Updated nginx-naxsi-ui.templates for empty line
+  * Fixed long changelog entries
+
+  [ Michael Lustfield ]
+  * Updated debian/nginx-common.preinst
+  * Added --with-pcre-jit to debian/rules
+  * Changed try_files in default config.
+  * Moved configuration purging to nginx-common.
+  * Pushing dangling changes
+  * Fixed up a few minor things.
+
+  [ Kartik Mistry ]
+  * Added Polish translation
+
+  [ Cyril Lavier ]
+  * Updated Czech debconf translation
+  * Updated modules lists
+  * wrap-and-sort -a
+  * Added Spanish and Galician po files.
+  * Updated French translation
+
+  [ Kartik Mistry ]
+  * Added it.po and updated pt.po translations
+  * Urgency set to medium for RC bug, preparing for upload
+
+  [ Cyril Lavier ]
+  * Updated naxsi to version 0.46-1
+  * Removed useless pyc files from naxsi module
+  * Change changelog message for naxsi upgrade
+
+  [ Kartik Mistry ]
+  * Urgency set to medium
+  * Applied patch to fix PO files, templates.pot from Christian PERRIER, #681381
+
+  [ Michael Lustfield ]
+  * fixed conflict
+
+  [ Kartik Mistry ]
+  * Added patch from Gregor Herrmann for #681758, NMU 1.2.1-2.2
+
+  [ Michael Lustfield ]
+  * Added some other modifications after testing.
+  * Touched up some broken stuff.
+  * Updated french translation
+  * Added a couple more fixes
+
+  [ Kartik Mistry ]
+  * Removed trailing slash from Files: field
+  * Fixed version, urgency. Do not change version without importing pristine tar :)
+
+  [ Michael Lustfield ]
+  * Changed /var/run to /run in multiple files.
+  * Changed version number.
+  * Updating naxsi version.
+
+  [ Kartik Mistry ]
+  * Fixed long changelog
+  * Fixed version
+  * Acknowledged NMUs
+
+  [ Michael Lustfield ]
+  * Added /run to nginx-common.dirs
+  * Added extra checking to .postinst files.
+  * Moved the symlink creation of the default sites to nginx-common. Avoids the chance of it being recreated when installing different nginx versions.
+  * Updated debconf templates
+  * Updated root to point at /usr/share/nginx/html instead of /usr/share/nginx/www.
+  * Updating PID in nginx.conf.
+
+  [ Kartik Mistry ]
+  * Updated po files for unfuzzyness
+  * Fixed nginx.pid path in config file, this should not affect as /var/run is symlink to /run
+  * Fixed those nasty ^M characters in templates file #692191
+  * Added #692335 translation bug
+  * Much better init log output using log_*_msg
+
+  [ Cyril Lavier ]
+  * Added RealIP module in nginx-naxsi
+
+  [ Michael Lustfield ]
+  * Uncommented listen lines in default server block to make it default regardless of order.
+
+  [ Kartik Mistry ]
+  * New upstream release 1.2.5
+  * Added patch to fix function test_nginx_config doesn't clean pid file at the end, #695119. Not tested yet though
+  * Revert "Added patch to fix function test_nginx_config doesn't clean pid file at the end, #695119. Not tested yet though"
+  * #695374: nginx.init doesn't check start-stop-daemon exit status
+  * Oops. Updated changelog
+  * New upstream release
+
+  [ Cyril Lavier ]
+  * Updated the Headers-more third party module with the 0.19 version.
+  * Updated the nginx-echo module with the 0.41 version.
+  * Updated nginx-lua with the 0.7.8 version.
+  * Updated nginx-cache-purge module with the 2.0 version.
+  * Added changelog entries
+
+  [ Kartik Mistry ]
+  * Added ja and pt_BR translations
+  * Preparing release
+  * Set default log to stay for 52 weeks instead of 52 days
+  * Added cache purge module to nginx-extras, rearrange some modules in config
+
+  [ Michael Lustfield ]
+  * Adding ipv6only=on to default server block.
+  * Adding default_server to default ipv4 server block.
+  * Removed obsolete --with-md5 and --with-sha1
+  * Pointing to the correct bug.
+
+  [ Kartik Mistry ]
+  * Suggests: nginx-doc for nginx-common, #702923
+
+  [ Michael Lustfield ]
+  * fixed two bugs
+
+  [ Kartik Mistry ]
+  * Fixed version number in changelog
+  * Fixed changelog
+  * Update to 1.2.8
+  * Refreshed patch for new release
+  * Removed chunkin module. No longer needed for 1.3.9+
+  * Updated nginx-lua to 0.8.0, Patched nginx-upload, Updated rules for chunking removal, Updated README.Modules-versions
+  * Updated copyright year and fixed missing text in License
+
+  [ Ondřej Surý ]
+  * Update naxsi module to 0.50
+  * Update nginx-cache-purge to 2.1
+  * Update nginx-echo module to 0.45
+  * Update module version numbers
+  * Remove upstream .git* files from modules
+
+  [ Kartik Mistry ]
+  * Updated changelog for last commit
+
+  [ Ondřej Surý ]
+  * Give changelog some i18n love
+
+  [ Kartik Mistry ]
+  * Removed nginx-upload-module as it no longer works
+  * Fixed Files: path for modules, Updated debian/* copyright
+  * #706195 enabled spdy module
+  * #701508, Suggests: fcgiwrap
+  * #704210 Added FancyIndexs module
+
+  [ Cyril Lavier ]
+  * Switch naxsi-ui DB engine from MySQL to SQLite (fixes #699678).
+
+  [ Kartik Mistry ]
+  * Fixed changelog
+
+  [ Cyril Lavier ]
+  * \#706456 Added http_substitutions_filter module
+  * Updated control file to reflect the recent add of external modules.
+
+  [ Kartik Mistry ]
+  * Uploading..
+  * New upstream version, S-V to 3.9.4
+  * Looks fine, uploading
+  * Fixed typo for ipv6only=on in conf
+
+  [ Cyril Lavier ]
+  * Performed the libgd2-{xpm,noxpm}-dev -> libgd2-dev transition.
+  * First try on fixing bug #707291
+
+  [ Kartik Mistry ]
+  * Urgency set to Medium
+
+  [ Cyril Lavier ]
+  * Removed the "echo "Display some message here"" line in nginx-naxsi-ui.preinst
+  * An actual clean fix for #707291
+  * Fix #708522
+  * Fixed wrong version number in NEWS.Debian
+
+  [ Kartik Mistry ]
+  * Fixed changelog
+  * Minor changes in NEWS.Debian
+  * Updated timestamp
+  * #711505: Changed libgd2-dev build-dep to libgd2-dev|libgd2-noxpm-dev allow backporting
+
+  [ Cyril Lavier ]
+  * Fix #711590
+  * Actually fixing #711590 (wrong copy/paste earlier)
+  * Updated changelog
+
+  [ Kartik Mistry ]
+  * Preparing for upload
+
+  [ Cyril Lavier ]
+  * Added missing arguments to have clean postinst/preinst scripts.
+  * Fixed #712989
+
+  [ Michael Lustfield ]
+  * Removed /doc/ from default config.
+
+  [ Kartik Mistry ]
+  * Fixed changelog for correct version and minor typo
+
+  [ Christos Trochalakis ]
+  * New upstream release
+
+  [ Kartik Mistry ]
+  * Added Christos Trochalakis as Uploaders, wrap-and-sort control file
+
+  [ Christos Trochalakis ]
+  * Better pidfile extraction in initscript
+  * Bugfix auth_pam module
+  * Only scan for stable releases, not mainline.
+  * Fix typo in debian/changelog
+  * Fix #724232, handle missing files correctly
+  * Fix #696797, gracefully handle empty pidfile in logrotate
+  * Use verbose arguments
+  * New upstream version (1.4.3)
+
+  [ Kartik Mistry ]
+  * #713853 Switch to dh-systemd, making packaging easier and more correct
+  * Renamed debian/nginx-common.service to debian/nginx-common.nginx.service. Set compat to 9, updated debhelper dependency
+
+  [ Christos Trochalakis ]
+  * Switch to dh_installlogrotate
+  * *-stamp files are deleted by dh_clean
+  * Remove unused mime-types rules target
+  * Nginx build system doesn't use config.{sub,guess}
+  * Don't ship an empty /run dir
+  * Override false lintian spelling error warning
+
+  [ Kartik Mistry ]
+  * Updated dist. Uploading
+
+  [ Christos Trochalakis ]
+  * Fix systemd issue with package updates
+
+  [ Michael Lustfield ]
+  * Updated package description for spdy
+  * Committing patch - show a proper message with config test
+
+  [ Christos Trochalakis ]
+  * #728721 Upgrade fancy index module to v0.3.3
+  * #729003 Remove upload module from nginx-extras description
+  * Make git-import-orig use pristine-tar by default
+  * Import upstream version 1.4.4
+
+  [ Kartik Mistry ]
+  * Fixed changelog a bit
+
+  [ Michael Lustfield ]
+  * Added Provieds: httpd-cgi to packages.
+  * Added missing line from patch.
+  * Removed type=forking.
+  * Changed ssl_protocols and ssl_ciphers.
+  * Added other options to nginx depends.
+  * Modify permissions of /var/log/nginx and added NEWS entry.
+  * Added spdy support to nginx-full.
+  * Fixed up ssl_ciphers for redundancy and compatibility.
+
+  [ Christos Trochalakis ]
+  * Revert "Removed type=forking."
+  * /var/log/nginx permission handling
+  * Ship NEWS with nginx-common instead of nginx-doc
+  * Pass the full HTTP host header in proxy_params, #733016
+  * Pass X-Forwarded-Proto header when proxying
+
+  [ Kartik Mistry ]
+  * Added patch to fix #733107 by Neutron Soutmun.
+  * Updated Standards-Version to 3.9.5, Fix Michael's email addresses in changelog and NEWS
+  * Use upstream PGP signature to verify upstream tarball in watch file
+
+  [ Christos Trochalakis ]
+  * Remove nginx-naxsi-ui from the list of nginx dependencies
+  * Remove nginx-naxsi-ui Provides and Conflicts
+  * Add a changelog entry about the previous commit
+
+  [ Michael Lustfield ]
+  * Removed nginx-custom from prior testing (unintentional commit)
+
+  [ Kartik Mistry ]
+  * Updated timestamp
+
+  [ Christos Trochalakis ]
+  * Fix #715435, early exit issue in naxsi-ui postinst script
+
+  [ Kartik Mistry ]
+  * Updated dist
+
+  [ Christos Trochalakis ]
+  * Fix #734139, log re-opening issue
+
+  [ Kartik Mistry ]
+  * Changed distribution. LGTM.
+
+  [ Christos Trochalakis ]
+  * Update nginx-lua to v0.9.4
+  * Fix #735152, exit issue in naxsi-ui preinst script
+  * Stricter dependencies and 'arch:all' to 'arch:any'
+  * Add Breaks on nginx flavor packages
+  * Fix #735551, nginx should be started by default
+  * Cleanup nginx-* prerm scripts
+  * New upstream release 1.4.5
+  * initscript: Remove "set -e"
+  * initscript: fix mixed indentation
+  * initscript: Rewrite start command
+  * initscript: Rewrite stop command
+  * initscript: Rewrite restart command
+  * initscript: Rewrite reload command
+  * initscript: Minor fixes
+  * initscript: force-reload should be an alias for reload
+  * initscript: Introduce rotate command
+  * initscript: Introduce upgrade command
+  * Add changelog entry regarding the initscript changes
+  * debian/control: Change Breaks now that 1.4.4-5 will not be released
+  * Releasing 1.4.5-1
+  * Hardening flags are already present
+  * Expand buildflags so the build log is easier to follow
+  * Switch to --with-cc-opt/--with-ld-opt configure flags
+  * Split common configure options
+  * Enable realip for nginx-light
+  * Enable debug module for nginx-light and nginx-naxsi
+  * Fix upstream signature verification
+  * New upstream release 1.4.6
+  * Release 1.4.6-1
+  * Update nginx-http-push module to v0.711
+  * Remove commented note about nginx-upload
+  * Update headers-more-nginx-module to v0.25
+  * Update echo-nginx-module to v0.51
+  * Update nginx-dav-ext-module to v0.0.3
+  * Update ngx_http_substitutions_filter_module to v0.6.4
+  * Update nginx-auth-pam to 1.3
+  * Fix changelog style a bit
+  * Remove loop symlink from nginx-http-push source
+  * Release 1.4.7-1, CVE-2014-0133
+  * Add packaging readme
+  * Rewrite debian/rules to use dh
+  * Release 1.4.7-2
+  * Fix typo in recent changelog entry
+  * New upstream release
+  * Enable auth request http module everywhere
+  * Remove already present openssl guard patch
+  * Update README.Packaging now that 1.6 is stable
+  * Release nginx 1.6.0-1
+
+  [ Kartik Mistry ]
+  * Added patch for #752796
+  * Make nginx-extras.install executable
+
+  [ Christos Trochalakis ]
+  * Release 1.6.1-1
+  * Build nginx-extras against luajit, #755875
+  * Update nginx-lua module to v0.9.11
+  * Better pidfile extraction from nginx.conf, closes #747329
+  * Upgrade to the latest mime.types
+  * Compile naxsi as the first nginx module, closes #758642
+  * Add changelog entry for naxsi module order
+  * Sync koi-utf,kow-win,scgi_params,uwsgi_params with upstream
+  * Sync fastcgi configuration files with upstream nginx, closes #718639
+  * Add a NEWS entry describing the config file changes
+  * Update nginx-lua module to v0.9.12
+  * Add some simple autopkgtests
+  * Update nginx-lua version in README.Modules-versions
+  * Update http_push module to 0.73, closes #745921
+  * Release 1.6.1-2
+  * Release 1.6.2-1
+  * Remove naxsi module from debian/modules
+  * Drop nginx-naxsi packages
+  * Handle nginx related config files shipped with nginx-common
+  * Remove passenger stanga and switch worker_processes to auto
+  * Release 1.6.2-2
+  * Change default document root and provide a new default page
+  * Fix a few more issues with the new document root
+  * Revamp default site configuration
+  * Merge https configuration example into the default server
+  * snakeoil snippet
+  * Fix systemd graceful stopping issue
+  * initscript: gracefully stop nginx by default
+  * Introduce a php-fastcgi snippet
+  * Add a changelog entry about the ssl snakeoil snippet
+  * Suggest disabling SSLv3 in default site
+  * Remove attribution note to Tyler Riddle per his request
+  * Release 1.6.2-3
+  * Update nginx-development-kit to v0.2.19
+  * Update nginx-echo to v0.56
+  * Update nginx-upload-progress to v0.9.1
+  * nginx-upload-progress: Remove not needed binary file
+  * Update ngx-fancy-index to 0.3.4
+  * Rewrite debian/copyright
+  * Switch postrotate to the initscript's rotate command
+  * Release 1.6.2-4
+  * Dropping SSLv3 and preferring server cipher order by default, #767456
+  * Add copyright for ngx_http_substitutions_filter_module
+  * Remove /etc/nginx/naxsi-ui.conf conffile
+  * Add a list of important changes since wheezy to README.Debian
+  * Release 1.6.2-5
+
+  [ Michael Lustfield ]
+  * Updating sample configuration - adding warning about using gzip with ssl.
+  * Added vim syntax highlighting.
+  * Adding note for contribution.
+  * Adding missing files.
+  * Adding upstart script
+  * Adding -fPIE -pie to build.
+  * Updated nginx-lua version.
+  * Added comment about ssl_ciphers
+  * Updated comment about ssl_ciphers
+  * Added ngx-conf configuration utility... finally.
+  * Adding python as requirement for nginx-common (ngx-conf)
+  * Replaced man page with upstream maintained version.
+  * Fixing small typo
+  * Changing PIE stuff after talking to Thomas Ward
+  * Switch worker_processes to auto.
+  * Adding gunzip to -full and -extras
+  * Updating module list
+  * Updating modules
+  * Updating list of modules. Thanks Peter Wu.
+  * Adding NEWS entry because of potential issues with i386 systems.
+  * Fixing a minor typo.
+  * Fix Python 3 compatibility in ngx-conf
+  * Switching to Nginx maintained version of index.html. Resolves unreported bugs.
+
+  [ Christos Trochalakis ]
+  * Fix version number
+  * New upstream release, 1.9.1
+  * Don't ship ngx-conf just yet
+  * Build upstream manpages before shipping
+  * debian/rules: http_limit_zone has been renamed to http_limit_conn
+  * debian/modules/nginx-lua: Backport 1.9.x compilation fix
+  * Switch to libgd-dev now that jessie is released
+  * debian/watch: Search mainline versions for now
+  * Update NEWS entry version
+  * Release 1.9.1-1
+
+  [ Michael Lustfield ]
+  * Cleaning up init script and fixed a bug with exit status
+
+  [ Christos Trochalakis ]
+  * initscript: Fix exit status
+  * initscript: Add some comments/hints
+  * New upstream release (1.9.2)
+  * debian/rules: Add stream module for nginx-full & nginx-extras
+  * Add thread pool support to nginx-full & nginx-extras
+  * Add a reference for the backported lua patch to README.Modules-versions
+  * Release 1.9.2-1
+  * Remove XS-Testsuite header
+  * Update nginx-lua to v0.9.16
+  * Sync cgi configs with upstream
+  * Release 1.9.3-1
+  * New upstream release (1.9.4)
+  * Fix licence ordering
+  * Update debian/copyright for nginx source
+  * Release 1.9.4-1
+  * New upstream release (1.9.5)
+  * Enable http2 module
+  * Add a NEWS entry for http2
+  * New upsteam release (1.9.6)
+  * 1.9.6-1
+  * Update nginx-lua 0.9.19
+  * Release 1.9.6-2
+
+  [ Michael Lustfield ]
+  * Changing logrotate from 52 days to 14 because of a typo and similar bug. Bug #805322
+  * Adding some missing files
+
+  [ Christos Trochalakis ]
+  * New upstream release (1.9.9)
+  * Update nginx-lua to v0.10.0
+  * Keep logs for 14 *days*
+  * Add a NEWS entry for our logrotate policy change
+  * Release 1.9.9-1
+  * New upstream release (1.9.10)
+  * Remove python from nginx-common deps, closes ##808699
+  * Release 1.9.10-1
+  * New upstream release (1.9.11)
+  * Update nginx-lua module to v0.10.1rc0-5-g01727a3
+  * Update Vcs field with secure links
+  * Bump Standards-Version to 3.9.7.0 (no changes needed)
+  * Add documentation option to systemd unit
+  * Disable PIE hardening flags for now, it breaks dynamic libraries
+  * Setup modules-{enabled,available} directories
+  * Setup libnginx-mod packaging flow
+  * dh_nginx: Modules depend on nginx-common for now
+  * Build libnginx-mod-* packages
+  * Make sure signature stays the same in all nginx builds
+  * tests: Test if nginx-light can successfully load dynamic modules
+  * Sum up changes
+  * New upstream release (1.9.13)
+  * Update auth-pam module and introduce libnginx-mod-http-auth-pam
+  * Update LUA module and introduce libnginx-mod-http-lua
+  * build modules using nginx-extras
+  * Introduce libnginx-mod-http-perl
+  * Perl module ifdefs for SSI so it cannot be loaded across builds.
+  * We accidentally closed a wishlist bug with the nginx-light enhancements
+  * Mark nginx-common & nginx-doc as 'Multi-Arch: foreign' (Closes: #812484)
+  * Test all modules in all flavors
+  * Convert tests to scripts
+  * Update nginx-auth-pam module to 1.5.1
+  * Update nginx-development-kit module to 0.3.0rc1 (dynamic module)
+  * Introduce libnginx-mod-http-ndk module
+  * dh_nginx: Support setting module priorities in .nginx files
+  * NDK is a dependency, load it before nginx-lua
+  * merge into dh_nginx
+  * README.packaging: Add a note about dynamic module support.
+  * Fix changelog typo
+  * Release 1.9.14-1
+  * Fix upgrading nginx-extras from a non-dynamic version
+  * Bump standards to 3.9.8
+  * libnginx-mod-http-perl: Override wrong-section-according-to-package-name warning
+  * Release 1.9.14-2
+  * New upstream release
+  * Release 1.10.0-1
+  * Generate dbgsym packages only if dh_strip supports it
+  * Correctly add changelog entry to 1.10.0-2
+  * Release 1.10.1-1
+  * Only build against liblua5.1-0-dev when libluajit is not available
+  * Re-enable experimental flow for 1.11.x
+
+  [ Michael Lustfield ]
+  * Implemented patch in bug 826061.
+  * Make nginx-*.postinst use invoke-rc.d.
+
+  [ Christos Trochalakis ]
+  * *.postinst: Make sure we restart nginx if on-the-fly upgrade fails
+  * mod: Upgrade nginx-lua to v0.10.5
+  * Add pointers to track modules not yet ready for migration
+  * Enable slice module on all flavors
+  * mod: Upgrade nginx-lua to v0.10.6
+  * Replace http-push module with nchan v1.0.2 by the same author
+  * mod: Convert nchan to a dynamic module
+  * Wrap tests/control
+  * Upgrade nginx-echo to v0.60
+  * mod: Convert http-echo to a dynamic module
+  * mod: Convert upstream-fair to dynamic module
+  * Upgrade headers-more to v0.31
+  * mod: Convert headers-more to a dynamic module
+  * mod: Convert http-cache to a dynamic module
+  * Enable SCGI & uWSGI module for nginx-light
+  * Upgrade fancyindex to v0.4.1
+  * mod: Convert fancyindex to a dynamic module
+  * Upgrade upload-progress module to v0.9.2
+  * mod: Convert upload progress module to dynamic
+  * mod: Convert substitution module to dynamic
+  * Update d/changelog
+  * wrap-and-sort
+  * Release 1.10.1-2
+  * Drop nginx-*-dbg packages
+  * Remove relic Breaks/Replaces used for squeeze upgrades
+  * Fix lsb-base deps
+  * Switch Maintainer to the Debian Nginx Maintainers list
+  * Release 1.10.1-3
+  * debian/control: Reference nginx-extras in nginx meta-package
+  * Strict version depend on lsb-base version >= 3.0-6
+
+  [ Michael Lustfield ]
+  * Updated PHP sample configuration block. #841230
+  * More documentation updates.
+  * Adding support for packaged application configurations.
+
+  [ Christos Trochalakis ]
+  * Follow the 1.10.x stable branch
+  * New upstream release
+  * Drop unused lintian overrides (spelling-error-in-binary)
+
+  [ Thomas Ward ]
+  * Imported Debian patch 1.10.1-3+yakkety0
+
+  [ Trevor Joynson (trevorj) ]
+  * Add extra modules.
+  * Release for yakkety
+  * Meh
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Mon, 24 Oct 2016 03:24:19 -0700
+
 nginx (1.10.1-3~disqus1+yakkety0) yakkety; urgency=medium
 
   [ Trevor Joynson (Debian) ]
