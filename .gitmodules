@@ -7,3 +7,12 @@
 [submodule "debian/modules/ngx_pagespeed"]
 	path = debian/modules/ngx_pagespeed
 	url = git://github.com/pagespeed/ngx_pagespeed.git
+[submodule "debian/modules/nginx-stream-upsync-module"]
+	path = debian/modules/nginx-stream-upsync-module
+	url = git://github.com/xiaokai-wang/nginx-stream-upsync-module.git
+[submodule "debian/modules/nginx-upsync-module"]
+	path = debian/modules/nginx-upsync-module
+	url = git://github.com/weibocom/nginx-upsync-module.git
+[submodule "debian/modules/nginx-push-stream-module"]
+	path = debian/modules/nginx-push-stream-module
+	url = git://github.com/wandenberg/nginx-push-stream-module.git
