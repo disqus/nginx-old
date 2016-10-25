@@ -120,8 +120,8 @@ full_configure_flags := \
 extras_configure_flags := \
 			$(common_configure_flags) \
 			--with-google_perftools_module \
-			--with-http_addition_module \
 			--with-http_degradation_module \
+			--with-http_addition_module \
 			--with-http_flv_module \
 			--with-http_geoip_module=dynamic \
 			--with-http_gunzip_module \
@@ -155,7 +155,6 @@ extras_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/nginx_upstream_check_module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upsync-module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-stream-upsync-module
-
 
 %:
 	dh $@ --with systemd
