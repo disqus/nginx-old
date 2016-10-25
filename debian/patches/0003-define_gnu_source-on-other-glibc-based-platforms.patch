@@ -1,9 +1,15 @@
-Date: Sat, 16 Jul 2016 23:52:50 +0100
 From: Steven Chamberlain <stevenc@debian.org>
+Date: Sat, 16 Jul 2016 23:52:50 +0100
 Subject: Use _GNU_SOURCE on GNU/kFreeBSD
 
 Define _GNU_SOURCE not only on GNU/Hurd, but also other glibc-based
 platforms including GNU/kFreeBSD.
+---
+ src/os/unix/ngx_posix_config.h | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/src/os/unix/ngx_posix_config.h b/src/os/unix/ngx_posix_config.h
+index 5d1358e..69b8dd1 100644
 --- a/src/os/unix/ngx_posix_config.h
 +++ b/src/os/unix/ngx_posix_config.h
 @@ -21,10 +21,13 @@

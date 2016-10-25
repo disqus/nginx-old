@@ -1,0 +1,8 @@
+debian/modules/nginx-upsync-module/doc/images/nginx-http-api-arch.png
+debian/modules/nginx-upsync-module/doc/images/list_update.bmp
+debian/modules/nginx-upsync-module/doc/images/nginx-upsync-arch.png
+debian/modules/nginx-upsync-module/doc/images/consul-template-reload-qps.png
+debian/modules/nginx-upsync-module/doc/images/upsync-vs-reload-qps.png
+debian/modules/nginx-upsync-module/doc/images/start_fllow.bmp
+debian/modules/nginx-upsync-module/doc/images/upsync-vs-reload-cost.png
+debian/modules/nginx-upsync-module/doc/images/consul-template-reload-cost.png

@@ -22,7 +22,11 @@ Build-Depends: autotools-dev,
                libssl-dev,
                libxslt1-dev,
                po-debconf,
-               zlib1g-dev
+               zlib1g-dev,
+               libbrotli-dev,
+               libatomic-ops-dev,
+               libgoogle-perftools-dev,
+               libxml2-dev
 Standards-Version: 3.9.8.0
 Homepage: http://nginx.net
 Vcs-Git: https://anonscm.debian.org/cgit/collab-maint/nginx.git
@@ -151,6 +155,15 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-http-uploadprogress (= ${binary:Version}),
          libnginx-mod-http-upstream-fair (= ${binary:Version}),
          libnginx-mod-http-xslt-filter (= ${binary:Version}),
+         libnginx-mod-http-brotli-filter (= ${binary:Version}),
+         libnginx-mod-http-brotli-static (= ${binary:Version}),
+         libnginx-mod-http-push-stream (= ${binary:Version}),
+         libnginx-mod-http-upstream-check (= ${binary:Version}),
+         libnginx-mod-http-upsync (= ${binary:Version}),
+         libnginx-mod-mail (= ${binary:Version}),
+         libnginx-mod-nchan (= ${binary:Version}),
+         libnginx-mod-stream (= ${binary:Version}),
+         libnginx-mod-stream-upsync (= ${binary:Version}),
          libnginx-mod-mail (= ${binary:Version}),
          libnginx-mod-nchan (= ${binary:Version}),
          libnginx-mod-stream (= ${binary:Version}),
@@ -370,3 +383,43 @@ Description: Substitution filter module for Nginx
  substitutions on response bodies. The module is quite different from Nginx's
  native Substitution module. It scans the output chains buffer and
  matches string line by line, just like Apache's mod_substitute.
+
+Package: libnginx-mod-http-brotli-filter
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Brotli compression filter module for Nginx
+ Google's brotli compression filter support for Nginx
+
+Package: libnginx-mod-http-brotli-static
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, libbrotli1
+Description: Brotli compression static module for Nginx
+ Google's brotli compression static file support for Nginx
+
+Package: libnginx-mod-http-upsync
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Dynamic upstream configuration from Consul/etcd for Nginx (HTTP)
+ Dynamic upstream configuration from Consul/etcd for Nginx. This is the HTTP
+ component, so it supports L7 functionality unlike stream-upsync.
+
+Package: libnginx-mod-stream-upsync
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends},
+         libnginx-mod-stream (= ${binary:Version})
+Description: Dynamic upstream configuration from Consul/etcd for Nginx (Stream)
+ Dynamic upstream configuration from Consul/etcd for Nginx. This is the stream
+ component, so it can be used for proxying TCP/UDP.
+
+Package: libnginx-mod-http-push-stream
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Highly scalable HTTP push via WS/COMET/SSE for Nginx
+ Highly scalable HTTP push via WS/COMET/SSE for Nginx
+
+Package: libnginx-mod-http-upstream-check
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Active upstream check module for Nginx
+ Checks upstreams if they are up, if not takes them out of the loop, etc
+
