@@ -1,3 +1,9 @@
+nginx (1.10.2-0ubuntu1ppa1) UNRELEASED; urgency=medium
+
+  * Bump
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Mon, 25 Oct 2016 03:28:00 -0700
+
 nginx (1.10.1-3ubuntu1ppa1) yakkety; urgency=medium
 
   [ Cyril Lavier ]
