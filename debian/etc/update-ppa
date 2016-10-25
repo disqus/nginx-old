@@ -1,0 +1,34 @@
+#!/bin/bash
+set -e
+set -xv
+
+: ${PPA:=ppa:disqus/nginx}
+
+git checkout master
+
+for dist in lucid precise trusty xenial yakkety; do
+    branch="ubuntu/$dist"
+    git checkout -B "$branch" master
+
+    dch \
+        -b \
+        -v $(dpkg-parsechangelog -S Version)'~'${dist}1 \
+        --force-distribution \
+        -D ${dist} "Rebuild for ${dist}"
+    dch \
+        -a "Changed build-dependencies to packages available in ${dist}"
+    git commit -m 'Bump' debian/changelog
+
+    gbp buildpackage \
+      --git-debian-branch="$branch" \
+      --git-submodules \
+      --git-builder='debuild --preserve-envvar=CCACHE_DIR --prepend-path=/usr/lib/ccache -i -I' \
+      -S -sa
+done
+
+git checkout master
+
+for c in ../build-area/*.changes; do
+    dput "$PPA" ../build-area/*.changes || :
+done
+
