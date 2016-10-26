@@ -13,9 +13,11 @@ on_exit
 
 pkg=$(dpkg-parsechangelog -S Source)
 base_version=$(dpkg-parsechangelog -S Version)
-rev=1
 
-for dist in lucid precise trusty xenial yakkety; do
+: ${rev:=1}
+: ${dists:="lucid precise trusty xenial yakkety"}
+
+for dist in $dists; do
     branch="ubuntu/$dist"
     version="${base_version}~${dist}${rev}"
 
