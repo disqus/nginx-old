@@ -1,6 +1,4 @@
-nginx (1.10.2-0ubuntu1ppa4ubuntu1~1.gbpf1f7f0) UNRELEASED; urgency=medium
-
-  ** SNAPSHOT build @f1f7f0535bab34a571a6e74421f9f27ff9481869 **
+nginx (1.10.2-0ubuntu1ppa4) unstable; urgency=medium
 
   [ Trevor Joynson (Debian) ]
   * Fix module load order
@@ -10,9 +8,12 @@ nginx (1.10.2-0ubuntu1ppa4ubuntu1~1.gbpf1f7f0) UNRELEASED; urgency=medium
   * Move upsync down in order
   * Update subs
 
+  [ Trevor Joynson (trevorj) ]
+  * Snap
+
   [ Trevor Joynson (Debian) ]
 
- -- Trevor Joynson (trevorj) <github@skywww.net>  Wed, 26 Oct 2016 00:03:10 -0700
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Wed, 26 Oct 2016 00:03:35 -0700
 
 nginx (1.10.2-0ubuntu1ppa3) UNRELEASED; urgency=medium
 
