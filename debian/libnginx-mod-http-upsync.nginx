@@ -10,4 +10,4 @@ $modulepath = $module;
 $modulepath =~ s/-/_/g;
 
 print "mod debian/build-extras/objs/ngx_${modulepath}_module.so\n";
-print "mod debian/libnginx-mod.conf/mod-${module}.conf\n";
+print "mod debian/libnginx-mod.conf/mod-${module}.conf 60\n";
