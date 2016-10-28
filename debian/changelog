@@ -1,3 +1,11 @@
+nginx (1.6.2-5+deb8u4) jessie-security; urgency=high
+
+  * Non-maintainer upload by the Security Team.
+  * debian/nginx-common.config: fix return code so script doesn't exit.
+    Thanks to Marc Deslauriers and Thomas Ward (Closes: #842276)
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 27 Oct 2016 20:22:42 +0200
+
 nginx (1.6.2-5+deb8u3) jessie-security; urgency=high
 
   [ Christos Trochalakis ]
