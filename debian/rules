@@ -10,7 +10,7 @@ debian_ldflags:=$(shell dpkg-buildflags --get LDFLAGS)
 DEBIAN_NGINX_PERL_LDFLAGS:= $(shell DEB_BUILD_MAINT_OPTIONS=hardening=+all,-pie dpkg-buildflags --get LDFLAGS)
 export DEBIAN_NGINX_PERL_LDFLAGS
 
-FLAVOURS := full light extras
+FLAVOURS := full light extras disqus
 
 DYN_MODS := \
 	http-auth-pam \
@@ -148,14 +148,15 @@ extras_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/nginx-lua \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upload-progress \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upstream-fair \
-			--add-dynamic-module=$(MODULESDIR)/ngx_http_substitutions_filter_module \
-			\
+			--add-dynamic-module=$(MODULESDIR)/ngx_http_substitutions_filter_module
+
+disqus_configure_flags := \
+			$(extras_configure_flags) \
 			--with-google_perftools_module \
 			--with-http_degradation_module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-statsd \
 			--add-dynamic-module=$(MODULESDIR)/ngx_brotli \
 			--add-dynamic-module=$(MODULESDIR)/nginx-push-stream-module \
-			\
 			--add-dynamic-module=$(MODULESDIR)/nginx_upstream_check_module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upsync-module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-stream-upsync-module
