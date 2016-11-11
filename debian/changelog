@@ -1,3 +1,10 @@
+nginx (1.10.2-0ubuntu1ppa5~lucid1) lucid; urgency=medium
+
+  * Rebuild for lucid
+  * Changed build-dependencies to packages available in lucid
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Fri, 11 Nov 2016 10:08:28 -0800
+
 nginx (1.10.2-0ubuntu1ppa5) unstable; urgency=medium
 
   [ Trevor Joynson (trevorj) ]
