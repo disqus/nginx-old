@@ -1,9 +1,16 @@
-nginx (1.10.2-3) UNRELEASED; urgency=medium
+nginx (1.11.7-1~exp1) experimental; urgency=medium
 
+  [ Michael Lustfield ]
   * debian/conf/sites-enabled/default:
-    + Correcting location of default php-fpm socket. (Closes #846145)
+    + Correcting location of default php-fpm socket. (Closes: #846145)
 
- -- Michael Lustfield <michael@lustfield.net>  Sat, 03 Dec 2016 07:57:39 +0000
+  [ Christos Trochalakis ]
+  * New upstream version 1.11.7
+  * Drop --with-ipv6 flag, IPv6 support is enabled automatically.
+  * Drop perl build flags patch, it is now handled upstream.
+  * Patch nginx-upstream-fair to build against nginx 1.11.
+
+ -- Christos Trochalakis <ctrochalakis@debian.org>  Mon, 19 Dec 2016 12:48:38 +0200
 
 nginx (1.10.2-2) unstable; urgency=medium
 
