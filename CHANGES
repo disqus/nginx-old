@@ -1,4 +1,109 @@
 
+Changes with nginx 1.11.7                                        13 Dec 2016
+
+    *) Change: now in case of a client certificate verification error the
+       $ssl_client_verify variable contains a string with the failure
+       reason, for example, "FAILED:certificate has expired".
+
+    *) Feature: the $ssl_ciphers, $ssl_curves, $ssl_client_v_start,
+       $ssl_client_v_end, and $ssl_client_v_remain variables.
+
+    *) Feature: the "volatile" parameter of the "map" directive.
+
+    *) Bugfix: dependencies specified for a module were ignored while
+       building dynamic modules.
+
+    *) Bugfix: when using HTTP/2 and the "limit_req" or "auth_request"
+       directives client request body might be corrupted; the bug had
+       appeared in 1.11.0.
+
+    *) Bugfix: a segmentation fault might occur in a worker process when
+       using HTTP/2; the bug had appeared in 1.11.3.
+
+    *) Bugfix: in the ngx_http_mp4_module.
+       Thanks to Congcong Hu.
+
+    *) Bugfix: in the ngx_http_perl_module.
+
+
+Changes with nginx 1.11.6                                        15 Nov 2016
+
+    *) Change: format of the $ssl_client_s_dn and $ssl_client_i_dn variables
+       has been changed to follow RFC 2253 (RFC 4514); values in the old
+       format are available in the $ssl_client_s_dn_legacy and
+       $ssl_client_i_dn_legacy variables.
+
+    *) Change: when storing temporary files in a cache directory they will
+       be stored in the same subdirectories as corresponding cache files
+       instead of a separate subdirectory for temporary files.
+
+    *) Feature: EXTERNAL authentication mechanism support in mail proxy.
+       Thanks to Robert Norris.
+
+    *) Feature: WebP support in the ngx_http_image_filter_module.
+
+    *) Feature: variables support in the "proxy_method" directive.
+       Thanks to Dmitry Lazurkin.
+
+    *) Feature: the "http2_max_requests" directive in the
+       ngx_http_v2_module.
+
+    *) Feature: the "proxy_cache_max_range_offset",
+       "fastcgi_cache_max_range_offset", "scgi_cache_max_range_offset", and
+       "uwsgi_cache_max_range_offset" directives.
+
+    *) Bugfix: graceful shutdown of old worker processes might require
+       infinite time when using HTTP/2.
+
+    *) Bugfix: in the ngx_http_mp4_module.
+
+    *) Bugfix: "ignore long locked inactive cache entry" alerts might appear
+       in logs when proxying WebSocket connections with caching enabled.
+
+    *) Bugfix: nginx did not write anything to log and returned a response
+       with code 502 instead of 504 when a timeout occurred during an SSL
+       handshake to a backend.
+
+
+Changes with nginx 1.11.5                                        11 Oct 2016
+
+    *) Change: the --with-ipv6 configure option was removed, now IPv6
+       support is configured automatically.
+
+    *) Change: now if there are no available servers in an upstream, nginx
+       will not reset number of failures of all servers as it previously
+       did, but will wait for fail_timeout to expire.
+
+    *) Feature: the ngx_stream_ssl_preread_module.
+
+    *) Feature: the "server" directive in the "upstream" context supports
+       the "max_conns" parameter.
+
+    *) Feature: the --with-compat configure option.
+
+    *) Feature: "manager_files", "manager_threshold", and "manager_sleep"
+       parameters of the "proxy_cache_path", "fastcgi_cache_path",
+       "scgi_cache_path", and "uwsgi_cache_path" directives.
+
+    *) Bugfix: flags passed by the --with-ld-opt configure option were not
+       used while building perl module.
+
+    *) Bugfix: in the "add_after_body" directive when used with the
+       "sub_filter" directive.
+
+    *) Bugfix: in the $realip_remote_addr variable.
+
+    *) Bugfix: the "dav_access", "proxy_store_access",
+       "fastcgi_store_access", "scgi_store_access", and "uwsgi_store_access"
+       directives ignored permissions specified for user.
+
+    *) Bugfix: unix domain listen sockets might not be inherited during
+       binary upgrade on Linux.
+
+    *) Bugfix: nginx returned the 400 response on requests with the "-"
+       character in the HTTP method.
+
+
 Changes with nginx 1.11.4                                        13 Sep 2016
 
     *) Feature: the $upstream_bytes_received variable.

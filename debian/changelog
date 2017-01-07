@@ -1,9 +1,59 @@
+nginx (1.11.7-1~exp1) experimental; urgency=medium
+
+  [ Michael Lustfield ]
+  * debian/conf/sites-enabled/default:
+    + Correcting location of default php-fpm socket. (Closes: #846145)
+
+  [ Christos Trochalakis ]
+  * New upstream version 1.11.7
+  * Drop --with-ipv6 flag, IPv6 support is enabled automatically.
+  * Drop perl build flags patch, it is now handled upstream.
+  * Patch nginx-upstream-fair to build against nginx 1.11.
+
+ -- Christos Trochalakis <ctrochalakis@debian.org>  Mon, 19 Dec 2016 12:48:38 +0200
+
 nginx (1.11.4-1~exp1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Build against OpenSSL 1.1.0. Thanks Kurt Roeckx for the pointers.
 
  -- Christos Trochalakis <yatiohi@ideopolis.gr>  Fri, 16 Sep 2016 12:55:30 +0300
+
+nginx (1.10.2-2) unstable; urgency=medium
+
+  * Build against OpenSSL 1.1.0. (Closes: #828453)
+    + Patch for nginx-lua by Alessandro Ghedini.
+    + Patch for nginx-upstream-fair by Kurt Roeckx.
+  * debian/modules:
+    + Rethink module patching logic.
+    + Convert dav-ext to a dynamic module package:
+      o libnginx-mod-http-dav-ext
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Sat, 12 Nov 2016 09:18:12 +0200
+
+nginx (1.10.2-1) unstable; urgency=high
+
+  [ Christos Trochalakis ]
+  * New upstream release.
+  * debian/nginx-common.postinst:
+    + CVE-2016-1247: Secure log file handling (owner & permissions)
+      against privilege escalation attacks. /var/log/nginx is now owned
+      by root:adm. Thanks ro Dawid Golunski for the report.
+      Changing /var/log/nginx permissions effectively reopens #701112,
+      since log files can be world-readable. This is a trade-off until
+      a better log opening solution is implemented upstream (trac:376).
+      (Closes: #842295)
+  * debian/control:
+    + Version depend on lsb-base (>= 3.0-6).
+      Fixes lintian init.d-script-needs-depends-on-lsb-base.
+  * debian/nginx-*.lintian-overrides:
+    + Drop unused spelling-error-in-binary override.
+
+  [ Michael Lustfield ]
+  * debian/conf/sites-available/default:
+    + Updated PHP sample configuration block. (Closes: #841230)
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Sat, 29 Oct 2016 08:45:09 +0300
 
 nginx (1.10.1-3) unstable; urgency=medium
 

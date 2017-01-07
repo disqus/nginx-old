@@ -473,7 +473,6 @@ ngx_http_special_response_handler(ngx_http_request_t *r, ngx_int_t error)
             case NGX_HTTPS_NO_CERT:
             case NGX_HTTP_REQUEST_HEADER_TOO_LARGE:
                 r->err_status = NGX_HTTP_BAD_REQUEST;
-                break;
         }
 
     } else {
@@ -792,7 +791,7 @@ ngx_http_send_refresh(ngx_http_request_t *r)
     b->last = ngx_cpymem(p, ngx_http_msie_refresh_tail,
                          sizeof(ngx_http_msie_refresh_tail) - 1);
 
-    b->last_buf = 1;
+    b->last_buf = (r == r->main) ? 1 : 0;
     b->last_in_chain = 1;
 
     out.buf = b;
