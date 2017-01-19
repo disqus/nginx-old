@@ -148,10 +148,7 @@ extras_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/nginx-lua \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upload-progress \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upstream-fair \
-			--add-dynamic-module=$(MODULESDIR)/ngx_http_substitutions_filter_module
-
-disqus_configure_flags := \
-			$(extras_configure_flags) \
+			--add-dynamic-module=$(MODULESDIR)/ngx_http_substitutions_filter_module \
 			--with-google_perftools_module \
 			--with-http_degradation_module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-statsd \
@@ -160,6 +157,9 @@ disqus_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/nginx_upstream_check_module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upsync-module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-stream-upsync-module
+
+disqus_configure_flags := \
+			$(extras_configure_flags)
 
 %:
 	dh $@ --with systemd
