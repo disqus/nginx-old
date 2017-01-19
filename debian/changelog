@@ -1,3 +1,12 @@
+nginx (1.10.2-0ubuntu1ppa6~1.gbp53fee8) unstable; urgency=medium
+
+  ** SNAPSHOT build @53fee8e0e0c1ab78fed0d7f4dd97bc38ffc4cc05 **
+
+  * Fix for zesty instead of lucid
+  * Don't worry, I ride on hack wheels.
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Thu, 19 Jan 2017 12:30:35 -0800
+
 nginx (1.10.2-0ubuntu1ppa5) unstable; urgency=medium
 
   [ Trevor Joynson (trevorj) ]
