@@ -1,3 +1,61 @@
+nginx (1.10.2-3ubuntu1ppa1~1.gbpef8ca1) unstable; urgency=medium
+
+  ** SNAPSHOT build @ef8ca19eb60bd501703d2cbf6f2d9501b1a5aee6 **
+
+  [ Christos Trochalakis ]
+  * Revert "Adding support for packaged application configurations."
+  * CVE-2016-1247: Secure log file handling
+  * Release 1.10.2-1
+
+  [ Michael Lustfield ]
+  * Removing php major version number from comment
+
+  [ Christos Trochalakis ]
+  * mod: Convert dav-ext to dynamic module
+  * Rethink module patches logic
+  * upstream-fair: Apply OpenSSL 1.1.0 FTBFS
+  * lua: Apply OpenSSL 1.1.0 FTBFS
+  * Fix FTBFS for OpenSSL 1.1.0
+  * Release 1.10.2-2
+  * Adjust experimental flow
+  * Change my email
+  * debian/rules: Correctly clean patched modules.
+    Thanks to Sven-Haegar Koch for the initial patch. (Closes: #844506)
+
+  [ Michael Lustfield ]
+  * Correcting location of default php-fpm socket.
+
+  [ Christos Trochalakis ]
+  * mod: Upgrade nchan to 1.0.8 (Closes: #844473)
+  * mod: Upgrade nginx-lua to 0.10.7
+  * Update nginx-lua OpenSSL 1.1.0 patch
+  * Reactivate PIE.
+    Thanks to Markus Waldeck for the suggestion
+  * mod: Check if nginx binary exists before reloading
+  * mod: Upgrade headers-mode to 0.32
+  * mod: Upgrade development kit to 0.3.0
+  * Release 1.10.2-3
+  * Merge de translation.
+    Thanks to Chris Leick (Closes: #843770)
+  * Merge fr translation.
+    Thanks to Julien Patriarca (Closes: #844712)
+  * Merge nl translation.
+    Thanks to Frans Spiesschaert (Closes: #845693)
+  * Merge pt_BR translation.
+    Thanks to Adriano Rafael Gomes (Closes: #846522)
+  * Merge da translation.
+    Thanks to Joe Dalton (Closes: #850857)
+  * Backport curve list support from 1.11.x mainline (Closes: #846085)
+  * Add a NEWS entry regarding dynamic modules
+  * Move module patches to debian/modules/patches
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (trevorj) <github@skywww.net>  Mon, 23 Jan 2017 09:58:01 -0800
+
 nginx (1.10.2-0ubuntu1ppa6~3.gbpcf31a9) unstable; urgency=medium
 
   ** SNAPSHOT build @cf31a94e90cdda963bc38e0697142dcf0a0615e4 **
