@@ -155,6 +155,16 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-http-uploadprogress (= ${binary:Version}),
          libnginx-mod-http-upstream-fair (= ${binary:Version}),
          libnginx-mod-http-xslt-filter (= ${binary:Version}),
+         libnginx-mod-http-brotli-filter (= ${binary:Version}),
+         libnginx-mod-http-brotli-static (= ${binary:Version}),
+         libnginx-mod-http-push-stream (= ${binary:Version}),
+         libnginx-mod-http-upstream-check (= ${binary:Version}),
+         libnginx-mod-http-upsync (= ${binary:Version}),
+         libnginx-mod-http-statsd (= ${binary:Version}),
+         libnginx-mod-mail (= ${binary:Version}),
+         libnginx-mod-nchan (= ${binary:Version}),
+         libnginx-mod-stream (= ${binary:Version}),
+         libnginx-mod-stream-upsync (= ${binary:Version}),
          libnginx-mod-mail (= ${binary:Version}),
          libnginx-mod-nchan (= ${binary:Version}),
          libnginx-mod-stream (= ${binary:Version}),
@@ -210,6 +220,7 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-http-push-stream (= ${binary:Version}),
          libnginx-mod-http-upstream-check (= ${binary:Version}),
          libnginx-mod-http-upsync (= ${binary:Version}),
+         libnginx-mod-http-statsd (= ${binary:Version}),
          libnginx-mod-mail (= ${binary:Version}),
          libnginx-mod-nchan (= ${binary:Version}),
          libnginx-mod-stream (= ${binary:Version}),
@@ -473,3 +484,8 @@ Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Active upstream check module for Nginx
  Checks upstreams if they are up, if not takes them out of the loop, etc
 
+Package: libnginx-mod-http-statsd
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Statsd module for Nginx
+ Statsd statsy stats for Nginx
