@@ -1,16 +1,19 @@
 #!/usr/bin/make -f
 export DH_VERBOSE=1
 
-export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+#export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all,-pie
 debian_cflags:=$(shell dpkg-buildflags --get CFLAGS) $(shell dpkg-buildflags --get CPPFLAGS)
+#debian_cppflags:=$(shell dpkg-buildflags --get CPPFLAGS)
 debian_ldflags:=$(shell dpkg-buildflags --get LDFLAGS)
 
 # export necessary perl hardenging flags
 # see: src/http/modules/perl/Makefile.PL
-DEBIAN_NGINX_PERL_LDFLAGS:= $(shell DEB_BUILD_MAINT_OPTIONS=hardening=+all dpkg-buildflags --get LDFLAGS)
+#DEBIAN_NGINX_PERL_LDFLAGS:= $(shell DEB_BUILD_MAINT_OPTIONS=hardening=+all dpkg-buildflags --get LDFLAGS)
+DEBIAN_NGINX_PERL_LDFLAGS:= $(shell DEB_BUILD_MAINT_OPTIONS=hardening=+all,-pie dpkg-buildflags --get LDFLAGS)
 export DEBIAN_NGINX_PERL_LDFLAGS
 
-FLAVOURS := full light extras disqus
+FLAVOURS := disqus
 
 DYN_MODS := \
 	http-auth-pam \
@@ -28,16 +31,15 @@ DYN_MODS := \
 	http-uploadprogress \
 	http-upstream-fair \
 	http-xslt-filter \
-	mail \
-	nchan \
-	stream \
-	\
 	http-brotli-static \
 	http-brotli-filter \
 	http-push-stream \
 	http-statsd \
 	http-upstream-check \
 	http-upsync \
+	mail \
+	nchan \
+	stream \
 	stream-upsync
 
 MODULESDIR = $(CURDIR)/debian/modules
