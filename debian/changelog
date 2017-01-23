@@ -750,10 +750,50 @@ nginx (1.10.1-3~disqus1+yakkety0) yakkety; urgency=medium
 
  -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Mon, 24 Oct 2016 01:16:16 -0700
 
-nginx (1.10.2-1) UNRELEASED; urgency=medium
+nginx (1.10.2-3) unstable; urgency=medium
+
+  [ Michael Lustfield ]
+  * debian/conf/sites-enabled/default:
+    + Correcting location of default php-fpm socket. (Closes: #846145)
+
+  [ Christos Trochalakis ]
+  * debian/rules: Correctly clean patched modules.
+    Thanks to Sven-Haegar Koch for the initial patch. (Closes: #844506)
+  * mod: Upgrade nchan to 1.0.8. (Closes: #844473)
+  * mod: Upgrade nginx-lua to 0.10.7.
+  * Update nginx-lua OpenSSL 1.1.0 patch.
+  * Reactivate PIE.
+    Thanks to Markus Waldeck for the suggestion.
+  * mod: Check if nginx binary exists before reloading.
+  * mod: Upgrade headers-mode to 0.32.
+  * mod: Upgrade development kit to 0.3.0.
+
+ -- Christos Trochalakis <ctrochalakis@debian.org>  Sat, 24 Dec 2016 12:11:21 +0200
+
+nginx (1.10.2-2) unstable; urgency=medium
+
+  * Build against OpenSSL 1.1.0. (Closes: #828453)
+    + Patch for nginx-lua by Alessandro Ghedini.
+    + Patch for nginx-upstream-fair by Kurt Roeckx.
+  * debian/modules:
+    + Rethink module patching logic.
+    + Convert dav-ext to a dynamic module package:
+      o libnginx-mod-http-dav-ext
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Sat, 12 Nov 2016 09:18:12 +0200
+
+nginx (1.10.2-1) unstable; urgency=high
 
   [ Christos Trochalakis ]
   * New upstream release.
+  * debian/nginx-common.postinst:
+    + CVE-2016-1247: Secure log file handling (owner & permissions)
+      against privilege escalation attacks. /var/log/nginx is now owned
+      by root:adm. Thanks ro Dawid Golunski for the report.
+      Changing /var/log/nginx permissions effectively reopens #701112,
+      since log files can be world-readable. This is a trade-off until
+      a better log opening solution is implemented upstream (trac:376).
+      (Closes: #842295)
   * debian/control:
     + Version depend on lsb-base (>= 3.0-6).
       Fixes lintian init.d-script-needs-depends-on-lsb-base.
@@ -763,11 +803,8 @@ nginx (1.10.2-1) UNRELEASED; urgency=medium
   [ Michael Lustfield ]
   * debian/conf/sites-available/default:
     + Updated PHP sample configuration block. (Closes: #841230)
-    + Adding include default-server.d/pkg_*.conf. (Closes: #822792)
-  * debian/nginx-common.dirs:
-    + Adding support for packaged application configurations.
 
- -- Christos Trochalakis <yatiohi@ideopolis.gr>  Thu, 20 Oct 2016 09:49:25 +0300
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Sat, 29 Oct 2016 08:45:09 +0300
 
 nginx (1.10.1-3+yakkety0) yakkety; urgency=medium
 
