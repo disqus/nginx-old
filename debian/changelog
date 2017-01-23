@@ -1,4 +1,15 @@
-nginx (1.10.2-0ubuntu1ppa6~2.gbp52bf88) UNRELEASED; urgency=medium
+nginx (1.10.2-0ubuntu1ppa6~3.gbpcf31a9) unstable; urgency=medium
+
+  ** SNAPSHOT build @cf31a94e90cdda963bc38e0697142dcf0a0615e4 **
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (trevorj) <github@skywww.net>  Mon, 23 Jan 2017 09:58:01 -0800
+
+nginx (1.10.2-0ubuntu1ppa6~2.gbp52bf88) unstable; urgency=medium
 
   ** SNAPSHOT build @52bf88b28eb31a356ae90e2cb2f1fb7b44ec6789 **
 
