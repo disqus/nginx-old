@@ -13,7 +13,8 @@ debian_ldflags:=$(shell dpkg-buildflags --get LDFLAGS)
 DEBIAN_NGINX_PERL_LDFLAGS:= $(shell DEB_BUILD_MAINT_OPTIONS=hardening=+all,-pie dpkg-buildflags --get LDFLAGS)
 export DEBIAN_NGINX_PERL_LDFLAGS
 
-FLAVOURS := disqus
+#FLAVOURS := disqus
+FLAVOURS := full light extras disqus
 
 DYN_MODS := \
 	http-auth-pam \
