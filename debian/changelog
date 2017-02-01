@@ -1,3 +1,15 @@
+nginx (1.10.2-4+5ubuntu1ppa1~4.gbp59e022) unstable; urgency=medium
+
+  ** SNAPSHOT build @59e0225f3f3492ba2f145676e6e33e47b1aea8da **
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * Force same version
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (trevorj) <github@skywww.net>  Wed, 01 Feb 2017 00:07:36 -0800
+
 nginx (1.10.2-4+5ubuntu1ppa1~3.gbp8e6834) unstable; urgency=medium
 
   ** SNAPSHOT build @8e6834d1704a02170d4103024fc60230f5e90bf6 **
