@@ -1,3 +1,10 @@
+nginx (1.10.2-4+5ubuntu1ppa1~5.gbp1986b1~precise0) precise; urgency=medium
+
+  * Rebuild for precise
+  * Changed build-dependencies to packages available in precise
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Wed, 01 Feb 2017 00:26:15 -0800
+
 nginx (1.10.2-4+5ubuntu1ppa1~5.gbp1986b1) unstable; urgency=medium
 
   ** SNAPSHOT build @1986b1adb87be4831825d70197be12083d988f52 **
