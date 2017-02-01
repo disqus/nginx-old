@@ -37,7 +37,6 @@ for dist in zesty yakkety xenial trusty precise; do
     gbp buildpackage \
       --git-debian-branch="$branch" \
       --git-submodules \
-      --git-builder='debuild --preserve-envvar=CCACHE_DIR --prepend-path=/usr/lib/ccache -i -I' \
       -S -sa
 
     dput "$PPA" "../build-area/${pkg}_${version}_source.changes"
