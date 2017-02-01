@@ -84,7 +84,7 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-http-xslt-filter (= ${binary:Version}),
          libnginx-mod-mail (= ${binary:Version}),
          libnginx-mod-stream (= ${binary:Version}),
-         nginx-common (= ${source:Version}),
+         nginx-common (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Breaks: nginx (<< 1.4.5-1)
@@ -118,7 +118,7 @@ Package: nginx-light
 Architecture: any
 Priority: extra
 Depends: libnginx-mod-http-echo (= ${binary:Version}),
-         nginx-common (= ${source:Version}),
+         nginx-common (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Breaks: nginx (<< 1.4.5-1)
@@ -172,7 +172,7 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-mail (= ${binary:Version}),
          libnginx-mod-nchan (= ${binary:Version}),
          libnginx-mod-stream (= ${binary:Version}),
-         nginx-common (= ${source:Version}),
+         nginx-common (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Breaks: nginx (<< 1.4.5-1)
@@ -232,7 +232,7 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-mail (= ${binary:Version}),
          libnginx-mod-nchan (= ${binary:Version}),
          libnginx-mod-stream (= ${binary:Version}),
-         nginx-common (= ${source:Version}),
+         nginx-common (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Breaks: nginx (<< 1.4.5-1)
