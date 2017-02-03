@@ -1,11 +1,17 @@
-nginx (1.10.2-4+5ubuntu1ppa1~6.gbp8dc32e) UNRELEASED; urgency=medium
+nginx (1.10.2-4+5ubuntu1ppa1~8.gbp05d766) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @8dc32ed759a4b54ae8015e3bad93aa5bd26a6529 **
+  ** SNAPSHOT build @05d766ba8be81c1f12ca60c22ae82d5a3ceb1a41 **
 
   [ Trevor Joynson (trevorj) ]
   * Bump
   * Update push stream to account for mutex issues
   * Update brotli
+
+  [ Trevor Joynson (Debian) ]
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * Revert "Update brotli"
 
   [ Trevor Joynson (Debian) ]
 
