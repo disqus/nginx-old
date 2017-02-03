@@ -1,3 +1,16 @@
+nginx (1.10.2-4+5ubuntu1ppa1~6.gbp8dc32e) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @8dc32ed759a4b54ae8015e3bad93aa5bd26a6529 **
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * Update push stream to account for mutex issues
+  * Update brotli
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (trevorj) <github@skywww.net>  Fri, 03 Feb 2017 15:26:36 -0800
+
 nginx (1.10.2-4+5ubuntu1ppa1~5.gbp1986b1) unstable; urgency=medium
 
   ** SNAPSHOT build @1986b1adb87be4831825d70197be12083d988f52 **
