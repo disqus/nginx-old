@@ -1,4 +1,4 @@
-nginx (1.10.2-4+5ubuntu1ppa1~8.gbp05d766) UNRELEASED; urgency=medium
+nginx (1.10.2-4+5ubuntu1ppa1~8.gbp05d766~trusty0) trusty; urgency=medium
 
   ** SNAPSHOT build @05d766ba8be81c1f12ca60c22ae82d5a3ceb1a41 **
 
@@ -14,8 +14,10 @@ nginx (1.10.2-4+5ubuntu1ppa1~8.gbp05d766) UNRELEASED; urgency=medium
   * Revert "Update brotli"
 
   [ Trevor Joynson (Debian) ]
+  * Rebuild for trusty
+  * Changed build-dependencies to packages available in trusty
 
- -- Trevor Joynson (trevorj) <github@skywww.net>  Fri, 03 Feb 2017 15:26:36 -0800
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Fri, 03 Feb 2017 15:32:34 -0800
 
 nginx (1.10.2-4+5ubuntu1ppa1~5.gbp1986b1) unstable; urgency=medium
 
