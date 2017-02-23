@@ -1,0 +1,5 @@
+#!/bin/bash
+set -eo pipefail
+
+# Install nginx
+lazy-apt nginx-disqus ssl-cert ca-certificates
