@@ -1,6 +1,6 @@
-nginx (1.10.2-4+5ubuntu1ppa1~8.gbp05d766) UNRELEASED; urgency=medium
+nginx (1.10.2-4+5ubuntu1ppa1~9.gbp72756e) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @05d766ba8be81c1f12ca60c22ae82d5a3ceb1a41 **
+  ** SNAPSHOT build @72756ecabf3bcf6efb27f5f9d4a4ce55d2523ebc **
 
   [ Trevor Joynson (trevorj) ]
   * Bump
@@ -12,6 +12,14 @@ nginx (1.10.2-4+5ubuntu1ppa1~8.gbp05d766) UNRELEASED; urgency=medium
   [ Trevor Joynson (trevorj) ]
   * Bump
   * Revert "Update brotli"
+
+  [ Trevor Joynson (Debian) ]
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+
+  [ Cole Kowalski ]
+  * Update nginx-push-stream-module
 
   [ Trevor Joynson (Debian) ]
 
