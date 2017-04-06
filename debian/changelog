@@ -1,3 +1,56 @@
+nginx (1.10.3-1ubuntu1~1.gbpf1ca58) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @f1ca584c37afce41f10a0e789b9bb14ef54db50e **
+
+  [ Trevor Joynson (trevorj) ]
+  * Release 1.10.2-0ubuntu1ppa1
+  * Script
+  * Update script
+  * Script
+  * Bump
+  * Typo
+  * Bump
+  * Update mods
+  * RELEASE THE KRAKEN
+  * Fix;Revert;Up
+  * Move upsync down in order
+  * Update subs
+  * Snap
+  * Boom
+  * Split off nginx-disqus
+  * Bump
+  * Fix for zesty instead of lucid
+  * Don't worry, I ride on hack wheels.
+  * Hate
+  * Lets actually build these kthx
+  * Bump
+  * Bump
+  * Bump
+  * Bump
+  * Restore
+  * Release new build to sync with debian
+  * Lol wat
+  * Bump
+  * Force same version
+  * Bump
+  * Update ppa script
+  * Bump
+  * Update push stream to account for mutex issues
+  * Update brotli
+  * Bump
+  * Revert "Update brotli"
+  * Bump
+
+  [ Cole Kowalski ]
+  * Update nginx-push-stream-module
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (trevorj) <github@skywww.net>  Thu, 06 Apr 2017 14:37:05 -0700
+
 nginx (1.10.3-1) unstable; urgency=medium
 
   * New upstream release. (Closes: #855113)
