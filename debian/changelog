@@ -1,4 +1,4 @@
-nginx (1.10.2-4+5ubuntu1ppa1~9.gbp72756e) UNRELEASED; urgency=medium
+nginx (1.10.2-4+5ubuntu1ppa1~9.gbp72756e~zesty0) zesty; urgency=medium
 
   ** SNAPSHOT build @72756ecabf3bcf6efb27f5f9d4a4ce55d2523ebc **
 
@@ -22,8 +22,10 @@ nginx (1.10.2-4+5ubuntu1ppa1~9.gbp72756e) UNRELEASED; urgency=medium
   * Update nginx-push-stream-module
 
   [ Trevor Joynson (Debian) ]
+  * Rebuild for zesty
+  * Changed build-dependencies to packages available in zesty
 
- -- Trevor Joynson (trevorj) <github@skywww.net>  Fri, 03 Feb 2017 15:26:36 -0800
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Thu, 06 Apr 2017 14:27:20 -0700
 
 nginx (1.10.2-4+5ubuntu1ppa1~5.gbp1986b1) unstable; urgency=medium
 
