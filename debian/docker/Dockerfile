@@ -15,4 +15,6 @@ ENV PUBLIC_ROOT=$APP_ROOT/media \
 CMD ["dockerize", "-template", "/etc/nginx/sites-available/default.tmpl:/etc/nginx/sites-available/default", "-stdout", "/var/log/nginx/access.log", "-stderr", "/var/log/nginx/error.log", "nginx"]
 
 EXPOSE 80 443
-HEALTHCHECK --interval=1m --timeout=3s CMD curl -f http://localhost/server-status || exit 1
+
+# Docker is ancient on all public CIs...
+#HEALTHCHECK --interval=1m --timeout=3s CMD curl -f http://localhost/server-status || exit 1
