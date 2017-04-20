@@ -1,6 +1,67 @@
-nginx (1.10.2-4+5ubuntu1ppa1~8.gbp05d766) UNRELEASED; urgency=medium
+nginx (1.10.3-1ubuntu1~1.gbpf1ca58) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @05d766ba8be81c1f12ca60c22ae82d5a3ceb1a41 **
+  ** SNAPSHOT build @f1ca584c37afce41f10a0e789b9bb14ef54db50e **
+
+  [ Trevor Joynson (trevorj) ]
+  * Release 1.10.2-0ubuntu1ppa1
+  * Script
+  * Update script
+  * Script
+  * Bump
+  * Typo
+  * Bump
+  * Update mods
+  * RELEASE THE KRAKEN
+  * Fix;Revert;Up
+  * Move upsync down in order
+  * Update subs
+  * Snap
+  * Boom
+  * Split off nginx-disqus
+  * Bump
+  * Fix for zesty instead of lucid
+  * Don't worry, I ride on hack wheels.
+  * Hate
+  * Lets actually build these kthx
+  * Bump
+  * Bump
+  * Bump
+  * Bump
+  * Restore
+  * Release new build to sync with debian
+  * Lol wat
+  * Bump
+  * Force same version
+  * Bump
+  * Update ppa script
+  * Bump
+  * Update push stream to account for mutex issues
+  * Update brotli
+  * Bump
+  * Revert "Update brotli"
+  * Bump
+
+  [ Cole Kowalski ]
+  * Update nginx-push-stream-module
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (trevorj) <github@skywww.net>  Thu, 06 Apr 2017 14:37:05 -0700
+
+nginx (1.10.3-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #855113)
+  * Update Vcs fields to the new location.
+    The repo is now moved under the pkg-nginx namespace.
+
+ -- Christos Trochalakis <ctrochalakis@debian.org>  Wed, 15 Feb 2017 09:58:13 +0200
+
+nginx (1.10.2-4+5ubuntu1ppa1~9.gbp72756e) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @72756ecabf3bcf6efb27f5f9d4a4ce55d2523ebc **
 
   [ Trevor Joynson (trevorj) ]
   * Bump
@@ -12,6 +73,14 @@ nginx (1.10.2-4+5ubuntu1ppa1~8.gbp05d766) UNRELEASED; urgency=medium
   [ Trevor Joynson (trevorj) ]
   * Bump
   * Revert "Update brotli"
+
+  [ Trevor Joynson (Debian) ]
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+
+  [ Cole Kowalski ]
+  * Update nginx-push-stream-module
 
   [ Trevor Joynson (Debian) ]
 
@@ -123,6 +192,22 @@ nginx (1.10.2-4+5ubuntu1ppa1~1.gbpef8ca1) unstable; urgency=medium
   [ Trevor Joynson (Debian) ]
 
  -- Trevor Joynson (trevorj) <github@skywww.net>  Mon, 23 Jan 2017 09:58:01 -0800
+
+nginx (1.10.2-4) unstable; urgency=medium
+
+  * Switch module reloading logic to dpkg triggers.
+  * Enable modules after a remove -> install cycle.
+  * Move module patches to debian/modules/patches.
+  * Backport curve list support from 1.11.x. (Closes: #846085)
+  * Add a NEWS entry regarding dynamic modules.
+  * Merge de,fr,nl,pt_BR,da translations.
+    Thanks to Chris Leick. (Closes: #843770)
+    Thanks to Julien Patriarca. (Closes: #844712)
+    Thanks to Frans Spiesschaert. (Closes: #845693)
+    Thanks to Adriano Rafael Gomes. (Closes: #846522)
+    Thanks to Joe Dalton. (Closes: #850857)
+
+ -- Christos Trochalakis <ctrochalakis@debian.org>  Sun, 22 Jan 2017 12:19:30 +0200
 
 nginx (1.10.2-0ubuntu1ppa6~3.gbpcf31a9) unstable; urgency=medium
 
