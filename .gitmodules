@@ -19,3 +19,6 @@
 [submodule "debian/modules/nginx-upsync-module"]
 	path = debian/modules/nginx-upsync-module
 	url = https://github.com/akatrevorjay/nginx-upsync-module.git
+[submodule "debian/modules/nginx-set-misc"]
+	path = debian/modules/nginx-set-misc
+	url = https://github.com/openresty/set-misc-nginx-module.git
