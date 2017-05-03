@@ -1,4 +1,12 @@
-nginx (1.10.3-1ubuntu1~1.gbpf1ca58) UNRELEASED; urgency=medium
+nginx (1.10.3-1ubuntu1~2.gbp549211) unstable; urgency=medium
+
+  ** SNAPSHOT build @549211a5e0b780d5fc181c7f736bc0a274f7186c **
+
+  * Add set-misc module
+
+ -- Cole Kowalski <cole@northernbloc.org>  Wed, 03 May 2017 09:58:41 -0400
+
+nginx (1.10.3-1ubuntu1~1.gbpf1ca58) unstable; urgency=medium
 
   ** SNAPSHOT build @f1ca584c37afce41f10a0e789b9bb14ef54db50e **
 
