@@ -38,6 +38,7 @@ DYN_MODS := \
 	http-statsd \
 	http-upstream-check \
 	http-upsync \
+        http-set-misc \
 	mail \
 	nchan \
 	stream \
@@ -164,7 +165,8 @@ extras_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/nginx_upstream_check_module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upsync-module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-stream-upsync-module \
-			--add-dynamic-module=$(MODULESDIR)/nginx-rtmp-module
+			--add-dynamic-module=$(MODULESDIR)/nginx-rtmp-module \
+			--add-dynamic-module=$(MODULESDIR)/nginx-set-misc
 
 disqus_configure_flags := \
 			$(extras_configure_flags)

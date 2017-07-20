@@ -232,6 +232,7 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-mail (= ${binary:Version}),
          libnginx-mod-nchan (= ${binary:Version}),
          libnginx-mod-stream (= ${binary:Version}),
+         libnginx-mod-http-set-misc (=${binary:Version}),
          nginx-common (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
@@ -501,3 +502,10 @@ Description: WebDAV missing commands support for Nginx
  WebDAV support.
  .
  WebDAV Ext provides the missing PROPFIND & OPTIONS methods.
+
+Package: libnginx-mod-http-set-misc
+Architecture: any
+Depends: libnginx-mod-http-ndk (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Various set_xxx directives added to nginx's rewrite module
