@@ -1,6 +1,6 @@
-nginx (1.10.3-1ubuntu1~12.gbp43cc84) UNRELEASED; urgency=medium
+nginx (1.10.3-1ubuntu1~13.gbp2f809b) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @43cc847565f36c99ce526f4bf5856b894baab043 **
+  ** SNAPSHOT build @2f809b2b0f05bf80fed2c07aa2479000045d040b **
 
   [ Trevor Joynson (trevorj) ]
   * Bump
@@ -46,7 +46,13 @@ nginx (1.10.3-1ubuntu1~12.gbp43cc84) UNRELEASED; urgency=medium
 
   [ Trevor Joynson (Debian) ]
 
- -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Wed, 19 Jul 2017 22:11:40 -0700
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * Add package to control
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Wed, 19 Jul 2017 22:51:04 -0700
 
 nginx (1.10.3-1ubuntu1~5.gbpf2c8cb) unstable; urgency=medium
 
