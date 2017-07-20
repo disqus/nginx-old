@@ -42,7 +42,8 @@ DYN_MODS := \
 	mail \
 	nchan \
 	stream \
-	stream-upsync
+	stream-upsync \
+	rtmp
 
 MODULESDIR = $(CURDIR)/debian/modules
 BASEDIR = $(CURDIR)
@@ -165,6 +166,7 @@ extras_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/nginx_upstream_check_module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-upsync-module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-stream-upsync-module \
+			--add-dynamic-module=$(MODULESDIR)/nginx-rtmp-module \
 			--add-dynamic-module=$(MODULESDIR)/nginx-set-misc
 
 disqus_configure_flags := \

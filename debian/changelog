@@ -1,3 +1,69 @@
+nginx (1.10.3-1ubuntu1~10.gbp1e4950) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @1e49505590437a0523f15b03cd8ddd5b84434b19 **
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * Allow fail
+  * Bump
+
+  [ Trevor Joynson (Debian) ]
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * RTMP modules
+
+  [ Trevor Joynson (Debian) ]
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * Bump
+
+  [ Trevor Joynson (Debian) ]
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+
+  [ Trevor Joynson (Debian) ]
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * Bump
+  * Doh
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Wed, 19 Jul 2017 20:56:10 -0700
+
+nginx (1.10.3-1ubuntu1~5.gbpf2c8cb) unstable; urgency=medium
+
+  ** SNAPSHOT build @f2c8cb9cbeadafc3e855ebaff86c0a473fa1c7f3 **
+
+  [ Cole Kowalski ]
+  * Changelog update
+
+  [ Trevor Joynson (trevorj) ]
+  * Add RTMP module
+  * Submod updates
+  * Add RTMP module
+  * Bump
+
+  [ Trevor Joynson (Debian) ]
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * Bump
+
+  [ Trevor Joynson (Debian) ]
+
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * Update distros
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Wed, 19 Jul 2017 19:42:06 -0700
+
 nginx (1.10.3-1ubuntu1~2.gbp549211) unstable; urgency=medium
 
   ** SNAPSHOT build @549211a5e0b780d5fc181c7f736bc0a274f7186c **
@@ -8,7 +74,7 @@ nginx (1.10.3-1ubuntu1~2.gbp549211) unstable; urgency=medium
 
 nginx (1.10.3-1ubuntu1~1.gbpf1ca58) unstable; urgency=medium
 
-  ** SNAPSHOT build @f1ca584c37afce41f10a0e789b9bb14ef54db50e **
+  ** SNAPSHOT build @1075fd08f8716678227c317c3eaca50a9d4c227f **
 
   [ Trevor Joynson (trevorj) ]
   * Release 1.10.2-0ubuntu1ppa1
@@ -57,7 +123,15 @@ nginx (1.10.3-1ubuntu1~1.gbpf1ca58) unstable; urgency=medium
 
   [ Trevor Joynson (Debian) ]
 
- -- Trevor Joynson (trevorj) <github@skywww.net>  Thu, 06 Apr 2017 14:37:05 -0700
+  [ Trevor Joynson (trevorj) ]
+  * Bump
+  * Add RTMP module
+  * Submod updates
+  * Add RTMP module
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Wed, 19 Jul 2017 19:02:12 -0700
 
 nginx (1.10.3-1) unstable; urgency=medium
 
