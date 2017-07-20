@@ -233,6 +233,7 @@ Depends: libnginx-mod-http-auth-pam (= ${binary:Version}),
          libnginx-mod-nchan (= ${binary:Version}),
          libnginx-mod-stream (= ${binary:Version}),
          libnginx-mod-http-set-misc (=${binary:Version}),
+         libnginx-mod-rtmp (=${binary:Version}),
          nginx-common (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
@@ -509,3 +510,8 @@ Depends: libnginx-mod-http-ndk (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Description: Various set_xxx directives added to nginx's rewrite module
+
+Package: libnginx-mod-rtmp
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: RTMP modules for nginx
