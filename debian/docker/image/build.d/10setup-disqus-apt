@@ -8,4 +8,4 @@ echo 'deb http://disqus-apt-mirror.s3-website-us-east-1.amazonaws.com/ubuntu xen
 apt-key adv --keyserver keys.gnupg.net --recv-keys C3680A18716870DB
 
 # Pin repo priority
-echo 'Package: *\nPin: origin disqus-apt-mirror.s3-website-us-east-1.amazonaws.com\nPin-Priority: 500' > /etc/apt/preferences.d/99disqus-apt
+echo -e 'Package: *\nPin: origin disqus-apt-mirror.s3-website-us-east-1.amazonaws.com\nPin-Priority: 500' > /etc/apt/preferences.d/99disqus-apt
