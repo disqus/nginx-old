@@ -1,3 +1,20 @@
+nginx (1.10.3-1ubuntu1~3.gbp1bdeae) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @1bdeae1de5798669a9257e07ed150c3ce917f0cc **
+
+  [ Cole Kowalski ]
+  * Changelog update
+
+  [ Trevor Joynson (trevorj) ]
+  * Add RTMP module
+  * Submod updates
+  * Add RTMP module
+  * Bump
+
+  [ Trevor Joynson (Debian) ]
+
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Wed, 19 Jul 2017 19:26:31 -0700
+
 nginx (1.10.3-1ubuntu1~2.gbp549211) unstable; urgency=medium
 
   ** SNAPSHOT build @549211a5e0b780d5fc181c7f736bc0a274f7186c **
