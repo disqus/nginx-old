@@ -27,4 +27,4 @@
 	url = https://github.com/openresty/set-misc-nginx-module.git
 [submodule "debian/modules/nchan"]
 	path = debian/modules/nchan
-	url = https://github.com/slact/nchan.git
+	url = https://github.com/akatrevorjay/nchan.git
