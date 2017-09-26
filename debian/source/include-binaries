@@ -48,3 +48,5 @@ debian/modules/ngx_brotli/deps/brotli/tests/testdata/x.compressed.02
 debian/modules/ngx_brotli/deps/brotli/tests/testdata/x.compressed.03
 debian/modules/ngx_brotli/deps/brotli/tests/testdata/zeros
 debian/modules/ngx_brotli/deps/brotli/tests/testdata/zeros.compressed
+debian/modules/nchan/dev/benchmarks-data.ods
+debian/modules/nchan/nchan_logo.png
