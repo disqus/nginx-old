@@ -1,4 +1,4 @@
-nginx (1.10.3-1ubuntu1~16.gbp8e0b64) UNRELEASED; urgency=medium
+nginx (1.10.3-1ubuntu1~16.gbp8e0b64~xenial0) xenial; urgency=medium
 
   ** SNAPSHOT build @8e0b649207487093be4ccd4664f475e987fa1d76 **
 
@@ -71,8 +71,10 @@ nginx (1.10.3-1ubuntu1~16.gbp8e0b64) UNRELEASED; urgency=medium
   * bins
 
   [ Trevor Joynson (Debian) ]
+  * Rebuild for xenial
+  * Changed build-dependencies to packages available in xenial
 
- -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Tue, 26 Sep 2017 14:31:55 -0700
+ -- Trevor Joynson (Debian) <debian@trevor.joynson.io>  Tue, 26 Sep 2017 14:45:11 -0700
 
 nginx (1.10.3-1ubuntu1~5.gbpf2c8cb) unstable; urgency=medium
 
